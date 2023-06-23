@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "availableDrivers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rideType",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "position.geohash",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "businesses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userBusinessType",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "position.geohash",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

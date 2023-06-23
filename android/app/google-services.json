@@ -1,0 +1,230 @@
+{
+  "project_info": {
+    "project_number": "295186155824",
+    "project_id": "mooweapp",
+    "storage_bucket": "mooweapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295186155824:android:bbb53ddfdef0e1d53660f5",
+        "android_client_info": {
+          "package_name": "app.moweweb.moweweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mowe.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295186155824:android:3656f1563f8b75553660f5",
+        "android_client_info": {
+          "package_name": "com.mooweapp.mooweapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295186155824-7jjuf6m2ruibr2tc57rlntbbodnb55ms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mooweapp.mooweapp",
+            "certificate_hash": "f31ff954815d51368b84a7e4fea7b9015de31b51"
+          }
+        },
+        {
+          "client_id": "295186155824-abcqdl078rmg8bdilukcgeln2j9hp8t4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mooweapp.mooweapp",
+            "certificate_hash": "023f5a88af1ead7824b306fe0f4c4c4141428e5d"
+          }
+        },
+        {
+          "client_id": "295186155824-dqttffo3c5m7bm55mi35dsard8ens6ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mooweapp.mooweapp",
+            "certificate_hash": "a2f513f0b489328fe6875e17fc21e67aa8f303b7"
+          }
+        },
+        {
+          "client_id": "295186155824-oqmoe73tjk7afst2icu90t7uuf5eo71c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mooweapp.mooweapp",
+            "certificate_hash": "bd28fb2b0d4287df51a5ca1f7d79c9b859a73a8e"
+          }
+        },
+        {
+          "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mowe.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295186155824:android:f44199171efa31813660f5",
+        "android_client_info": {
+          "package_name": "com.mowe.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295186155824-lfpj50s206jnojiqo6echejn74fi436r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mowe.app",
+            "certificate_hash": "023f5a88af1ead7824b306fe0f4c4c4141428e5d"
+          }
+        },
+        {
+          "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mowe.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295186155824:android:e3d254cd9c6dbd073660f5",
+        "android_client_info": {
+          "package_name": "com.mowe.mowe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mowe.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295186155824:android:57d1855520bfa6693660f5",
+        "android_client_info": {
+          "package_name": "com.mowepos.mowepos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295186155824-l4l38kde0lm2n68s6f4roikh7ae5qg4b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mowe.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

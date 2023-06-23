@@ -1,0 +1,31 @@
+class ContractModel {
+  String imageUrl = "imageUrl";
+  String rejected = "rejected";
+  String payments = "payments";
+  String userUID = "userUID";
+  String acceptTerms = "acceptTerms";
+  String purpose = "purpose";
+  String chatRoomId = "chatRoomId";
+  String currencyCode = "currencyCode";
+  String contractAccepted = "contractAccepted";
+  String contractDispute = "contractDispute";
+  String cancelContract = "cancelContract";
+  String receiverAccepted = "receiverAccepted";
+  String receiverDispute = "receiverDispute";
+  String creatorDispute = "creatorDispute";
+  String releasePayment = "releasePayment";
+  String toProtect = "toProtect";
+  String and = "and";
+  String thisContract = "thisContract";
+  String firstName = "firstName";
+  String lastName = "lastName";
+  String creator = "creator";
+  String receiver = "receiver";
+  String startDateEndDate = "startDateEndDate";
+  String receiverId = "receiverId";
+  String creatorId = "creatorId";
+  String contractAmount = "contractAmount";
+  String contractId = "contractId";
+  String status = "status";
+  String dateTime = "dateTime";
+}

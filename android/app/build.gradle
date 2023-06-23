@@ -1,0 +1,148 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+apply plugin: 'com.android.application'
+// START: FlutterFire Configuration
+apply plugin: 'com.google.gms.google-services'
+// END: FlutterFire Configuration
+//apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    compileSdk 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.mowe.app"
+        minSdkVersion 21
+        //noinspection OldTargetApi
+        targetSdkVersion 33
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['$System.env.ALIAS']
+            keyPassword keystoreProperties['$System.env.KEY_PASSWORD']
+            storeFile keystoreProperties['$System.env.SIGNING_KEY_BASE64'] ? file(keystoreProperties['$System.env.SIGNING_KEY_BASE64']) : null
+            storePassword keystoreProperties['$System.env.KEY_STORE_PASSWORD']
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+//    plugins {
+//        kotlin("android.extensions")
+//    }
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+//minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
+//            shrinkResources false
+            minifyEnabled true
+//            useProguard true
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+        }
+    }
+    namespace 'com.mowe.app'
+    ndkVersion '25.2.9519653'
+    buildToolsVersion '30.0.2'
+}
+flutter {
+    source '../..'
+}
+//androidExtensions {
+//    experimental = true
+//}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+    implementation "androidx.browser:browser:1.5.0"
+    implementation 'com.google.firebase:firebase-appcheck-debug:17.0.1'
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.1.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
+    implementation 'com.stripe:stripe-wechatpay:20.25.7'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.plaid.link:sdk-core:3.13.2'
+    implementation ('com.google.android.exoplayer:exoplayer:2.18.7')
+
+
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+//
+////    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+//    implementation "androidx.browser:browser:1.4.0"
+//    implementation 'com.google.firebase:firebase-appcheck-debug:16.1.1'
+//    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.1.1'
+//    implementation 'androidx.appcompat:appcompat:1.6.0'
+//    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
+//    implementation 'com.stripe:stripe-wechatpay:17.1.0'
+//    androidTestImplementation 'androidx.test:runner:1.5.2'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//    implementation 'com.plaid.link:sdk-core:3.10.0'
+//    implementation ('com.google.android.exoplayer:exoplayer:2.18.2')
+}
