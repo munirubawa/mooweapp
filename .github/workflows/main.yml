@@ -28,7 +28,8 @@ jobs:
         with:
           flutter-version: '3.3.8'
       - run: flutter pub get
-      - run: flutter build apk --release
+      - name: Build APPBUNDLE
+      - run: flutter build appbundle --release
 #      - run: flutter build apk --release --split-per-abi
         env:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
@@ -49,12 +50,16 @@ jobs:
       - name: Push to Release
         uses: ncipollo/release-action@v1
         with:
-         artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
+         artifacts: "build/app/outputs/bundle/release/*.aab"
          tag: v1.0.${{ github.run_number }}
          token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
 
 
-
+      - name: Save APPBUNDLE to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+         name: APPBUNDLE
+         path: build/app/outputs/bundle/release/app-release.aab
 #      - name: Upload a Build Artifact
 #        uses: actions/upload-artifact@v3.1.2
 #        with:
