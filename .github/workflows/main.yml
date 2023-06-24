@@ -29,7 +29,6 @@ jobs:
           flutter-version: '3.3.8'
       - run: flutter pub get
       - run: flutter build appbundle --release
-#      - run: flutter build apk --release --split-per-abi
         env:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
