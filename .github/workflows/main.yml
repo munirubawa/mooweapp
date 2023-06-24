@@ -28,7 +28,7 @@ jobs:
         with:
           flutter-version: '3.3.8'
       - run: flutter pub get
-      - run: flutter build apk --debug --split-per-abi
+      - run: flutter build apk
         env:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
@@ -48,7 +48,7 @@ jobs:
       - name: Push to Release
         uses: ncipollo/release-action@v1
         with:
-         artifacts: "build/app/outputs/apk/debug/*"
+         artifacts: "uild/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
          tag: v1.0.${{ github.run_number }}
          token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
 
