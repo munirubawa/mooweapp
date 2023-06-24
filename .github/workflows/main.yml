@@ -43,8 +43,7 @@ jobs:
 #          alias: ${{ secrets.ALIAS }}
 #          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
 #          keyPassword: ${{ secrets.KEY_PASSWORD }}
-      - name: Build APPBUNDLE
-        run: flutter build appbundle --release
+
 
       - name: Push to Release
         uses: ncipollo/release-action@v1
