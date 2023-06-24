@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v2
         with:
-          distribution: 'zulu'
+#          distribution: 'zulu'
           java-version: '11'
       - uses: subosito/flutter-action@v2
         with:
@@ -43,12 +43,23 @@ jobs:
 #          alias: ${{ secrets.ALIAS }}
 #          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
 #          keyPassword: ${{ secrets.KEY_PASSWORD }}
+      - name: Build APPBUNDLE
+        run: flutter build appbundle --release
 
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.2
+      - name: Push to Release
+        uses: ncipollo/release-action@v1
         with:
-#          name: optional, default is artifact
-          path: build/app/outputs/bundle/release/app-release.apk
+         artifacts: "build/app/outputs/apk/debug/*"
+         tag: v1.0.${{ github.run_number }}
+         token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
+
+
+
+#      - name: Upload a Build Artifact
+#        uses: actions/upload-artifact@v3.1.2
+#        with:
+##          name: optional, default is artifact
+#          path: build/app/outputs/bundle/release/app-release.apk
 
 
 #      - run: |
