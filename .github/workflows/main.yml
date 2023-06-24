@@ -47,7 +47,7 @@ jobs:
 
 
       - name: Save APPBUNDLE to Artifacts
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
          name: APPBUNDLE
          path: build/app/outputs/bundle/release/app-release.aab
