@@ -39,7 +39,7 @@ jobs:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-#      - uses: r0adkll/sign-android-release@v1
+      - uses: actions/sign-android-release@v1
       - name: Sign app APK
           # ID used to access action output
 #        id: sign_app
