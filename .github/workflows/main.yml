@@ -10,7 +10,7 @@ on:
       - "v*.*.*" # on every version tag will build a new android artifact example: v3.1.2+6
 jobs:
   test:
-    name: Flutter Tests
+    name: Mowe CI / CD
     runs-on: ubuntu-latest
 
     steps:
