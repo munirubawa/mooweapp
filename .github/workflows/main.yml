@@ -32,7 +32,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.3.8'
-      - run: flutter clean
+#      - run: flutter clean
       - run: flutter pub get
       - run: flutter build apk
         env:
@@ -40,11 +40,11 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 #      - uses: r0adkll/sign-android-release@v1
-#        name: Sign app APK
-#          # ID used to access action output
-#        id: sign_app
-#        with:
-#          releaseDirectory: app/build/outputs/apk/release
+      - name: Sign app APK
+          # ID used to access action output
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
 #          signingKeyBase64: ${{ secrets.SIGNING_KEY_BASE64 }}
 #          alias: ${{ secrets.ALIAS }}
 #          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
