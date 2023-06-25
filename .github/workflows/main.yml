@@ -44,6 +44,15 @@ jobs:
          token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
 
 
+      - name: Deploy to Alpha
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service_account.json
+          packageName: com.mowe.app
+          releaseFile: app/build/outputs/bundle/release/app-release.aab
+          track: alpha
+          whatsNewDirectory: distribution/
+
 #      - name: Save APPBUNDLE to Artifacts
 #      - uses: actions/upload-artifact@v2
 #        with:
