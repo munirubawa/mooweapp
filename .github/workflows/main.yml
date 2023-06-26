@@ -10,7 +10,7 @@ on:
       - "v*.*.*" # on every version tag will build a new android artifact example: v3.1.2+6
 jobs:
   test:
-    name: Mowe CI / CD
+    name: Productions CI / CD
     runs-on: macos-latest
     steps:
       - name: Decode Keystore
