@@ -64,22 +64,23 @@ android {
     }
     signingConfigs {
         release {
-            def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
-            def allFilesFromDir = new File(tmpFilePath).listFiles()
+//            def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
+//            def allFilesFromDir = new File(tmpFilePath).listFiles()
+//
+//            if (allFilesFromDir != null) {
+//                def keystoreFile = allFilesFromDir.first()
+//                keystoreFile.renameTo("your_keystore.jks")
+//            }
 
-            if (allFilesFromDir != null) {
-                def keystoreFile = allFilesFromDir.first()
-                keystoreFile.renameTo("your_keystore.jks")
-            }
+//            storeFile = file("your_keystore.jks")
+//            storePassword System.getenv("SIGNING_STORE_PASSWORD")
+//            keyAlias System.getenv("SIGNING_KEY_ALIAS")
+//            keyPassword System.getenv("SIGNING_KEY_PASSWORD")
 
-            storeFile = file("your_keystore.jks")
-            storePassword System.getenv("SIGNING_STORE_PASSWORD")
-            keyAlias System.getenv("SIGNING_KEY_ALIAS")
-            keyPassword System.getenv("SIGNING_KEY_PASSWORD")
-//            keyAlias keystoreProperties['keyAlias']
-//            keyPassword keystoreProperties['keyPassword']
-//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-//            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
         }
     }
     buildFeatures {
