@@ -5,7 +5,7 @@ name: CD / CI
 # events but only for the master branch
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "distribution" ]
     tags:
       - "v*.*.*" # on every version tag will build a new android artifact example: v3.1.2+6
 jobs:
@@ -27,51 +27,31 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.3.8'
-      - uses: actions/setup-ruby@v1
+      - run: flutter pub get
+      - run: flutter build appbundle --release
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+
+
+
+      - name: Push to Release
+        uses: ncipollo/release-action@v1
         with:
-          ruby-version: '3.0'
-      - name: Install bundle
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
+         artifacts: "build/app/outputs/bundle/release/*.aab"
+         tag: v1.0.${{ github.run_number }}
+         token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
 
-      - name: Create Firebase Service Credentials file
-        run: |
-          echo "$FIREBASE_CREDENTIALS" > firebase_credentials.json.b64
-          base64 -d -i firebase_credentials.json.b64 > firebase_credentials.json
-        env:
-          FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
 
-      - name: Distribute app with 🔥 App Distribution 🚀
-        run: bundle exec fastlane distribute
-        env:
-          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-
-#      - run: flutter pub get
-#      - run: flutter build appbundle --release
-#        env:
-#          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-#          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
-#          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-#
-#
-#
-#      - name: Push to Release
-#        uses: ncipollo/release-action@v1
-#        with:
-#         artifacts: "build/app/outputs/bundle/release/*.aab"
-#         tag: v1.0.${{ github.run_number }}
-#         token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
-#
-#
-#      - name: Deploy to Alpha
-#        uses: r0adkll/upload-google-play@v1
-#        with:
-#          serviceAccountJson: service_account.json
-#          packageName: com.mowe.app
-#          releaseFiles: app/build/outputs/bundle/release/app-release.aab
-#          track: alpha
-#          whatsNewDirectory: distribution/
+      - name: Deploy to Alpha
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service_account.json
+          packageName: com.mowe.app
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          track: alpha
+          whatsNewDirectory: distribution/
 
 #      - name: Save APPBUNDLE to Artifacts
 #      - uses: actions/upload-artifact@v2
