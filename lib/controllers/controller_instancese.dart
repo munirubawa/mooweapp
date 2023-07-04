@@ -93,4 +93,5 @@ extension PrettyJson on Map<String, dynamic> {
 }
 
 
-const kPrimaryColor = Color(0xFF12792E);
+const kPrimaryColor = Colors.blueAccent;
+// const kPrimaryColor = Color(0xFF12792E);
