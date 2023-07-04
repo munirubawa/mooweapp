@@ -1,117 +1,53 @@
-# This is a basic workflow to help you get started with Actions
-name: CD / CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: CI
 on:
   push:
-    branches: [ "beta" ]
-    tags:
-      - "v*.*.*" # on every version tag will build a new android artifact example: v3.1.2+6
+    branches:
+      - beta
+
 jobs:
-  test:
-    name: Beta Mowe CI / CD
+  flutter_test:
+    name: Run flutter test and analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+
+  build_ios:
+    name: Build Flutter (iOS)
+    needs: [flutter_test]
     runs-on: macos-latest
     steps:
-      - name: Decode Keystore
-        id: decode_keystore
-        uses: timheuer/base64-to-file@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
         with:
-          fileName: 'your_signing_keystore.jks'
-          encodedString: ${{ secrets.KEYSTORE }}
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v2
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
         with:
-          distribution: 'zulu'
-          java-version: '11'
-      - uses: subosito/flutter-action@v2
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build ios --release --no-codesign
+
+  build_appbundle:
+    name: Build Flutter (Android)
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
         with:
-          flutter-version: '3.3.8'
-#      - run: flutter pub get
-#      - run: flutter build appbundle --release
-#        env:
-#          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-#          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
-#          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-#
-#
-#
-#      - name: Push to Release
-#        uses: ncipollo/release-action@v1
-#        with:
-#         artifacts: "build/app/outputs/bundle/release/*.aab"
-#         tag: v1.0.${{ github.run_number }}
-#         token: ${{ secrets.PERSONAL_RELEASE_TOKEN }}
-#
-#
-#      - name: Deploy to Alpha
-#        uses: r0adkll/upload-google-play@v1
-#        with:
-#          serviceAccountJson: service_account.json
-#          packageName: com.mowe.app
-#          releaseFiles: app/build/outputs/bundle/release/app-release.aab
-#          track: alpha
-#          whatsNewDirectory: distribution/
-#
-#
-#
-
-
-build_ios:
-  name: Build Flutter (iOS)
-  runs-on: macos-latest
-  steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-java@v1
-    with:
-      java-version: "12.x"
-  - uses: subosito/flutter-action@v1
-    with:
-      channel: "stable"
-  - run: flutter pub get
-  - run: flutter clean
-  - run: flutter build ios --release --no-codesign
-
-build_appbundle:
-  name: Build Flutter (Android)
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-java@v1
-      with:
-        java-version: "12.x"
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: "stable"
-    - run: flutter pub get
-    - run: flutter clean
-    - run: flutter build appbundle
-
-#      - name: Save APPBUNDLE to Artifacts
-#      - uses: actions/upload-artifact@v2
-#        with:
-#         name: APPBUNDLE
-#         path: build/app/outputs/bundle/release/app-release.aab
-#      - name: Upload a Build Artifact
-#        uses: actions/upload-artifact@v3.1.2
-#        with:
-##          name: optional, default is artifact
-#          path: build/app/outputs/bundle/release/app-release.apk
-
-
-#      - run: |
-#         flutter build ios --no-codesign
-#         cd build/ios/iphoneos
-#         mkdir Payload
-#         cd Payload
-#         ln -s ../Runner.app
-#         cd ..
-#         zip -r app.ipa Payload
-#      - name: Push to Releases
-#        uses: ncipollo/release-action@v1
-#        with:
-#         artifacts: "build/ios/iphoneos/app.ipa"
-#         tag: v1.0.${{ github.run_number }}
-#         token: ${{ secrets.TOKEN }}
-
-
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build appbundle
