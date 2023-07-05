@@ -36,6 +36,13 @@ jobs:
       - run: flutter clean
       - run: flutter build ios --release --no-codesign
 
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+         artifacts: "build/ios/iphoneos/app.ipa"
+         tag: v1.0.${{ github.run_number }}
+         token: ${{ secrets.TOKEN }}
+
   build_appbundle:
     name: Build Flutter (Android)
     runs-on: ubuntu-latest
@@ -61,3 +68,10 @@ jobs:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+#          name: optional, default is artifact
+          token: ${{ secrets.TOKEN }}
+          path: build/app/outputs/bundle/release/app-release.apk
