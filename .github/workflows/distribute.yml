@@ -72,6 +72,5 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
-#          name: optional, default is artifact
           token: ${{ secrets.TOKEN }}
           path: build/app/outputs/bundle/release/app-release.apk
