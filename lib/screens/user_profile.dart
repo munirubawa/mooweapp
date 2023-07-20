@@ -22,7 +22,7 @@ class ShowUserProfileOptions extends StatelessWidget {
             Get.back();
           },
         ),
-        title: showCallButtons(),
+        // title: showCallButtons(),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,8 +118,8 @@ class ShowUserProfileOptions extends StatelessWidget {
             Icons.mark_chat_read_outlined,
             color: kPrimaryColor,
           ),
-          title: Row(
-            children: const [
+          title: const Row(
+            children: [
               Text("Safe Contract"),
               // Text(
               //   member.firstName.toString(),
@@ -177,7 +177,7 @@ class ShowUserProfileOptions extends StatelessWidget {
               ),
             )
           : Container(),
-      smartContract(userProfileController.chatRoom!),
+      // smartContract(userProfileController.chatRoom!),
     ];
   }
 
@@ -250,7 +250,7 @@ class ShowUserProfileOptions extends StatelessWidget {
                     style: themeData!.textTheme.bodyText2,
                   ),
                   onTap: () {
-                    showBarModalBottomSheet(
+                    showModalBottomSheet(
                       context: context,
                       builder: (context) => Container(
                         color: Colors.white,
@@ -328,8 +328,8 @@ class ShowUserProfileOptions extends StatelessWidget {
               Icons.mark_chat_read_outlined,
               color: kPrimaryColor,
             ),
-            title: Row(
-              children: const [
+            title: const Row(
+              children: [
                 Text("Smart Contract "),
                 // Text(
                 //   member.firstName.toString(),
@@ -345,7 +345,7 @@ class ShowUserProfileOptions extends StatelessWidget {
                     style: themeData!.textTheme.bodyText2,
                   ),
                   onTap: () {
-                    showBarModalBottomSheet(
+                    showModalBottomSheet(
                       context: context,
                       builder: (context) => Container(
                         color: Colors.white,

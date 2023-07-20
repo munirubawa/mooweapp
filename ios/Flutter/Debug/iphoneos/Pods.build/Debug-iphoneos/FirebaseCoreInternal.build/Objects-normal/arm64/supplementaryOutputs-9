@@ -1,0 +1,15 @@
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatController.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatController.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatController.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatController.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Heartbeat.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Heartbeat.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Heartbeat.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Heartbeat.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.o"

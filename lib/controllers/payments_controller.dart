@@ -249,8 +249,25 @@ class PaymentsController extends GetxController {
     }
   }
 
+  static const focusedBorderColor = Color.fromRGBO(23, 171, 144, 1);
+  static const fillColor = Color.fromRGBO(243, 246, 249, 0);
+  static const borderColor = Color.fromRGBO(23, 171, 144, 0.4);
+
+  final defaultPinTheme = PinTheme(
+    width: 56,
+    height: 56,
+    textStyle: const TextStyle(
+      fontSize: 22,
+      color: Color.fromRGBO(30, 60, 87, 1),
+    ),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(19),
+      border: Border.all(color: borderColor),
+    ),
+  );
   void checkUserPasscode({required void Function()? onTap}) {
-    showBarModalBottomSheet(
+    showModalBottomSheet(
+      isScrollControlled: true,
       context: Get.context!,
       builder: (context) => Container(
         color: Colors.white,
@@ -264,7 +281,7 @@ class PaymentsController extends GetxController {
               ),
               Text(
                 "Enter Passcode",
-                style: themeData!.textTheme.headline4,
+                style: themeData!.textTheme.headlineMedium,
               ),
               SizedBox(
                 height: Get.height * .15,
@@ -276,6 +293,33 @@ class PaymentsController extends GetxController {
                 pinContentAlignment: Alignment.center,
                 focusNode: FocusNode(),
                 onCompleted: (pin) => print(pin),
+                cursor: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 9),
+                      width: 22,
+                      height: 1,
+                      color: focusedBorderColor,
+                    ),
+                  ],
+                ),
+                focusedPinTheme: defaultPinTheme.copyWith(
+                  decoration: defaultPinTheme.decoration!.copyWith(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: focusedBorderColor),
+                  ),
+                ),
+                submittedPinTheme: defaultPinTheme.copyWith(
+                  decoration: defaultPinTheme.decoration!.copyWith(
+                    color: fillColor,
+                    borderRadius: BorderRadius.circular(19),
+                    border: Border.all(color: focusedBorderColor),
+                  ),
+                ),
+                errorPinTheme: defaultPinTheme.copyBorderWith(
+                  border: Border.all(color: Colors.redAccent),
+                ),
                 validator: (s) {
                   // return s == '2222' ? null : 'Pin is incorrect';
                   if (s == userPaymentMethod.passcode) {
@@ -292,8 +336,7 @@ class PaymentsController extends GetxController {
                   }
                 },
                 defaultPinTheme: defaultPinTheme,
-                focusedPinTheme: focusedPinTheme,
-                submittedPinTheme: submittedPinTheme,
+                // focusedPinTheme: focusedPinTheme,
               ),
             ],
           ),
@@ -305,15 +348,13 @@ class PaymentsController extends GetxController {
   RxString firstPasscode = RxString("");
   RxString secondPasscode = RxString("");
   void setUpUserPasscode() {
-    showBarModalBottomSheet(
+    showModalBottomSheet(
       context: Get.context!,
       builder: (context) => Container(
         color: Colors.white,
         child: Column(
           children: [
-            SizedBox(
-              height: Get.height * .1,
-            ),
+            SizedBox(height: Get.height * .1),
             Obx(
               () => firstPasscode.value == "" ? Text("Create A Passcode ", style: themeData!.textTheme.headline4) : Text("Enter Passcode Again", style: themeData!.textTheme.headline4),
             ),
@@ -625,7 +666,7 @@ class PaymentsController extends GetxController {
 
         break;
       case CurrencyTypes.GHS:
-        StreamedResponse response = await momoController.requestToPay( amount: amount, currency: currency);
+        StreamedResponse response = await momoController.requestToPay(amount: amount, currency: currency);
 
         if (response.statusCode == 202) {
           Future.delayed(const Duration(seconds: 10), () async {

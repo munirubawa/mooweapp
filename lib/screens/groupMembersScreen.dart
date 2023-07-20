@@ -45,11 +45,17 @@ class GroupMembersScreen extends StatelessWidget {
                                           transactionService.context = context;
                                           debugPrint("semd money in chat");
 
-                                          showBarModalBottomSheet(
+                                          showModalBottomSheet(
+                                            isScrollControlled: true,
                                             context: context,
-                                            builder: (context) => Container(
-                                              color: Colors.white,
-                                              child: ChatMoneyKeyPad(
+                                            builder: (context) => Scaffold(
+                                              // color: Colors.white,
+                                              appBar: AppBar(
+                                                elevation: 0.0,
+                                                automaticallyImplyLeading: false,
+                                                backgroundColor: kPrimaryColor,
+                                              ) ,
+                                              body: ChatMoneyKeyPad(
                                                 member: element,
                                                 chatRoom: groupChatController.chatRoom.value,
                                                 // contract: Contract(),
@@ -68,7 +74,7 @@ class GroupMembersScreen extends StatelessWidget {
                                         }
                                         userProfileController.chatRoom = chatRoom;
                                         userProfileController.member = element;
-                                        showBarModalBottomSheet(
+                                        showModalBottomSheet(
                                           context: context,
                                           builder: (context) => Container(
                                             color: Colors.white,

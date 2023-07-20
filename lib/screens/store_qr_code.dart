@@ -31,37 +31,37 @@ class StoreQRCode extends StatelessWidget {
                 )),
           ),
         ),
-        Expanded(
-          flex: 15,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Obx(() => QrImage(
-                  data: jsonEncode({
-                    scanPaymentModel.paymentPath: storeController.storeBusiness.value.cardTransactionPath.toString(),
-                    scanPaymentModel.storeName: storeController.storeBusiness.value.businessName.toString(),
-                    scanPaymentModel.currencyCode: storeController.storeBusiness.value.currencyCode.toString(),
-                    scanPaymentModel.currencySign: storeController.storeBusiness.value.currencySign.toString(),
-                    scanPaymentModel.amount: transactionService.transactionAmount.value,
-                    scanPaymentModel.deviceToken: chatServices.localMember!.get(memberModel.deviceToken),
-                  }),
-                  version: QrVersions.auto,
-                  size: 250,
-                  gapless: true,
-                  errorStateBuilder: (cxt, err) {
-                    return const Center(
-                      child: Text(
-                        "Uh oh! Something went wrong...",
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  },
-                  // embeddedImage: const AssetImage('assets/ic_launcher_round.png'),
-                  // embeddedImageStyle: QrEmbeddedImageStyle(
-                  //   size: const Size(44, 44),
-                  // ),
-                )),
-          ),
-        ),
+        // Expanded(
+        //   flex: 15,
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(vertical: 20.0),
+        //     child: Obx(() => QrImage(
+        //           data: jsonEncode({
+        //             scanPaymentModel.paymentPath: storeController.storeBusiness.value.cardTransactionPath.toString(),
+        //             scanPaymentModel.storeName: storeController.storeBusiness.value.businessName.toString(),
+        //             scanPaymentModel.currencyCode: storeController.storeBusiness.value.currencyCode.toString(),
+        //             scanPaymentModel.currencySign: storeController.storeBusiness.value.currencySign.toString(),
+        //             scanPaymentModel.amount: transactionService.transactionAmount.value,
+        //             scanPaymentModel.deviceToken: chatServices.localMember!.get(memberModel.deviceToken),
+        //           }),
+        //           version: QrVersions.auto,
+        //           size: 250,
+        //           gapless: true,
+        //           errorStateBuilder: (cxt, err) {
+        //             return const Center(
+        //               child: Text(
+        //                 "Uh oh! Something went wrong...",
+        //                 textAlign: TextAlign.center,
+        //               ),
+        //             );
+        //           },
+        //           // embeddedImage: const AssetImage('assets/ic_launcher_round.png'),
+        //           // embeddedImageStyle: QrEmbeddedImageStyle(
+        //           //   size: const Size(44, 44),
+        //           // ),
+        //         )),
+        //   ),
+        // ),
         Expanded(
           flex: 3,
           child: Obx(() => Column(
@@ -80,7 +80,7 @@ class StoreQRCode extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   transactionService.setPaymentToEmpty();
-                  showBarModalBottomSheet(
+                  showModalBottomSheet(
                     context: context,
                     builder: (context) => Scaffold(
                       backgroundColor: kPrimaryColor,

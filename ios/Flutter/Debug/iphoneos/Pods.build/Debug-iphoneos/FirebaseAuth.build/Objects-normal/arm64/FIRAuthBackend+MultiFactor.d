@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseAuth.build/module.modulemap \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend+MultiFactor.m \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend+MultiFactor.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRIdentityToolkitRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRequestConfiguration.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAppCheck/Interop/FIRAppCheckInterop.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuth.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthAPNSTokenType.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthErrors.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneRequestInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProto.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentResponse.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneResponseInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneRequestInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAppCredential.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentResponse.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneResponseInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInResponse.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInRequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInResponse.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFARequest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFAResponse.h

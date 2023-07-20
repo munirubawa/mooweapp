@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com</string>
+	<string>295186155824-eb27hdmcsp3l1uc3dbsdb2018jdb0uqe.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb</string>
+	<string>com.googleusercontent.apps.295186155824-eb27hdmcsp3l1uc3dbsdb2018jdb0uqe</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>295186155824-7jjuf6m2ruibr2tc57rlntbbodnb55ms.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAi4RqSG5MCESXfeCtsrDuj1RW4079wO1o</string>
+	<string>AIzaSyChRxfVwY4FfIh54UevryYRdk1UfwfSq-0</string>
 	<key>GCM_SENDER_ID</key>
 	<string>295186155824</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mowe.app</string>
+	<string>com.app.mowe</string>
 	<key>PROJECT_ID</key>
 	<string>mooweapp</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:295186155824:ios:2334c66994888f1d3660f5</string>
+	<string>1:295186155824:ios:a1ab976b09b96b1d3660f5</string>
 	<key>DATABASE_URL</key>
 	<string>https://mooweapp-default-rtdb.firebaseio.com</string>
 </dict>

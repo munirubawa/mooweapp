@@ -61,7 +61,7 @@ class _ProjectChatScreenState extends State<ProjectChatScreen> {
                   Get.to(()=> GroupContributionsScreen(
                     chatRoom: widget.chatRoom,
                   ));
-                  // showBarModalBottomSheet(
+                  // showModalBottomSheet(
                   //   context: context,
                   //   builder: (context) => Container(
                   //     color: Colors.white,
@@ -84,7 +84,7 @@ class _ProjectChatScreenState extends State<ProjectChatScreen> {
                   {
                     enumServices.transactionActionType = TransactionActionType.SEND_CASH_PROJECT_CHAT;
 
-                    showBarModalBottomSheet(
+                    showModalBottomSheet(
                       context: context,
                       builder: (context) => Container(
                         color: Colors.white,

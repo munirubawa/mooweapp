@@ -62,7 +62,7 @@ class _ProjectGroupMembersScreenState extends State<ProjectGroupMembersScreen> {
                                       }
                                       userProfileController.chatRoom = chatRoomSnapshot.data!;
                                       userProfileController.member = memberSnapshot.data!;
-                                      showBarModalBottomSheet(
+                                      showModalBottomSheet(
                                         context: context,
                                         builder: (context) => Container(
                                           color: Colors.white,

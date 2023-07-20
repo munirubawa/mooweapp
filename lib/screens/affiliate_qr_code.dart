@@ -21,24 +21,24 @@ class AffiliateQRCode extends StatelessWidget {
                 ],
               ),
             ),
-              QrImage(
-                data: "https://mowe.app/ap=${chatServices.localMember!.get(memberModel.affiliateId)}",
-                version: QrVersions.auto,
-                size: 250,
-                gapless: true,
-                errorStateBuilder: (cxt, err) {
-                  return const Center(
-                    child: Text(
-                      "Uh oh! Something went wrong...",
-                      textAlign: TextAlign.center,
-                    ),
-                  );
-                },
-                // embeddedImage: const AssetImage('assets/ic_launcher.png'),
-                // embeddedImageStyle: QrEmbeddedImageStyle(
-                //   size: const Size(80, 80),
-                // ),
-              ),
+              // QrImage(
+              //   "https://mowe.app/ap=${chatServices.localMember!.get(memberModel.affiliateId)}",
+              //   version: QrVersions.auto,
+              //   size: 250,
+              //   gapless: true,
+              //   errorStateBuilder: (cxt, err) {
+              //     return const Center(
+              //       child: Text(
+              //         "Uh oh! Something went wrong...",
+              //         textAlign: TextAlign.center,
+              //       ),
+              //     );
+              //   },
+              //   // embeddedImage: const AssetImage('assets/ic_launcher.png'),
+              //   // embeddedImageStyle: QrEmbeddedImageStyle(
+              //   //   size: const Size(80, 80),
+              //   // ),
+              // ),
             ],
           ),
         ),

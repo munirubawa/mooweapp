@@ -48,46 +48,46 @@ class _MoowePayHomeScreenState extends State<MoowePayHomeScreen> with TickerProv
             )),
             centerTitle: true,
             actions: [
-              IconButton(
-                onPressed: () {
-                  if (contactServices.contactsPermissionGranted) {
-                    if(chatServices.localMember!.get(memberModel.affiliateActive)){
-                      // Get.to(()=>  const AffiliatedProgram());
-                    } else{
-                      Get.defaultDialog(
-                        title: "Activation",
-                        content: Text("Would you like to activate your affiliates account?",textAlign: TextAlign.center, style: themeData!.textTheme.bodyLarge),
-                        confirm: SizedBox(
-                          height: 35,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              TextButton(onPressed: (){}, child: const Text("Cancel"),),
-                              TextButton(onPressed: (){
-                                Get.back();
-                                chatServices.localMember!.reference.update({memberModel.affiliateActive: true});
-                                showLoading(message: "activation in progress");
-                                Future.delayed(const Duration(seconds: 5), (){
-                                  dismissLoadingWidget();
-                                }).then((value){
-                                  showToastMessage(msg: "Affiliate program has been activated");
-                                });
-                              }, child: const Text("Activate")),
-                            ],
-                          ),
-                        )
-                      );
-                    }
-
-                  } else {
-                    permissionController.getContactPermission();
-                  }
-                },
-                icon: const Icon(
-                  Icons.person_add_alt,
-                  color: Colors.white,
-                ),
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     if (contactServices.contactsPermissionGranted) {
+              //       if(chatServices.localMember!.get(memberModel.affiliateActive)){
+              //         // Get.to(()=>  const AffiliatedProgram());
+              //       } else{
+              //         Get.defaultDialog(
+              //           title: "Activation",
+              //           content: Text("Would you like to activate your affiliates account?",textAlign: TextAlign.center, style: themeData!.textTheme.bodyLarge),
+              //           confirm: SizedBox(
+              //             height: 35,
+              //             child: Row(
+              //               mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //               children: [
+              //                 TextButton(onPressed: (){}, child: const Text("Cancel"),),
+              //                 TextButton(onPressed: (){
+              //                   Get.back();
+              //                   chatServices.localMember!.reference.update({memberModel.affiliateActive: true});
+              //                   showLoading(message: "activation in progress");
+              //                   Future.delayed(const Duration(seconds: 5), (){
+              //                     dismissLoadingWidget();
+              //                   }).then((value){
+              //                     showToastMessage(msg: "Affiliate program has been activated");
+              //                   });
+              //                 }, child: const Text("Activate")),
+              //               ],
+              //             ),
+              //           )
+              //         );
+              //       }
+              //
+              //     } else {
+              //       permissionController.getContactPermission();
+              //     }
+              //   },
+              //   icon: const Icon(
+              //     Icons.person_add_alt,
+              //     color: Colors.white,
+              //   ),
+              // ),
               IconButton(
                 onPressed: () {
                   Get.to(()=>  const UserTransactionHistory());

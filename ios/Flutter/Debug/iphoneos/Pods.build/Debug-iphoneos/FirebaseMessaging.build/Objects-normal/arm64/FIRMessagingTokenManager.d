@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseMessaging.build/module.modulemap \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.m \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Public/FirebaseMessaging/FIRMessaging.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseInstallations/Source/Library/Private/FirebaseInstallationsInternal.h \
+  /Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseInstallations.build/module.modulemap \
+  /Users/munirubawa/development/mooweapp/ios/Pods/Target\ Support\ Files/FirebaseInstallations/FirebaseInstallations-umbrella.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FirebaseInstallations.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallations.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsAuthTokenResult.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsErrors.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingConstants.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingDefines.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingLogger.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingCode.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSError+FIRMessaging.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthKeychain.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthService.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinService.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingUtilities.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinPreferences.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinStore.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenDeleteOperation.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenOperation.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenFetchOperation.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAPNSInfo.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenStore.h

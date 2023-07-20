@@ -32,7 +32,7 @@ class PushNotifier{
             // TODO: Handle this case.
             break;
           case NotificationOriginating.background:
-            NotificationController.createCallNotification(message);
+            // NotificationController.createCallNotification(message);
 
             break;
         }

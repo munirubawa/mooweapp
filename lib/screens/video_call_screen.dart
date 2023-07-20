@@ -35,7 +35,7 @@ webrtc.RTCRtpSender? sender;
 
   @override
   void initState() {
-    NotificationController.cancelNotifications();
+    // NotificationController.cancelNotifications();
     callActions();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     // signalingController.callActionDetailsSnapshot = signalingController.callActionDetailsSnapshot;

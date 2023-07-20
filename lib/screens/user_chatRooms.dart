@@ -1,6 +1,4 @@
 import 'package:mooweapp/export_files.dart';
-import 'package:shimmer/shimmer.dart';
-
 String capitalize(String string) {
   if (string == null) {
     throw ArgumentError.notNull('string');
@@ -323,11 +321,7 @@ class ChatRoomTitle extends StatelessWidget {
       case ChatTypes.PRIVATE_CHAT:
         // TODO: Handle this case.
         String sender = chatRoom.members!.firstWhere((element) => element != dbHelper.user());
-        // chatRoomController.getMemberStreams(sender);
-        // chatRoomController.currentMember.value[memberModel.online];
-        debugPrint("contactPath");
-        // debugPrint(chatRoomController.membersByContactPath.value.length.toString());
-        // chatRoomController.getMemberStreams(sender);
+        debugPrint("ChatRoomTitle contactPath");
         return StreamBuilder<DocumentSnapshot>(
           stream: firebaseFirestore.doc(sender).snapshots().map((event) => event),
           builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
@@ -341,15 +335,7 @@ class ChatRoomTitle extends StatelessWidget {
             }
           },
         );
-      // return Obx(() {
-      //   if(chatRoomController.membersByContactPath.value[sender] == null) return Container();
-      //   DocumentSnapshot mem = chatRoomController.membersByContactPath.value[sender]!;
-      //   return chatRoomController.currentMember.value[memberModel.firstName] !=null? Text(
-      //     "${chatRoomController.currentMember.value[memberModel.firstName].toString().capitalizeFirst} ${chatRoomController.currentMember.value[memberModel.firstName].toString().capitalizeFirst}",
-      //     style: style,
-      //   ): Text(chatRoomController.currentMember.value[memberModel.firstName]);
-      // },
-      // );
+
       case ChatTypes.GROUP_CHAT:
         // TODO: Handle this case.
         return Text(

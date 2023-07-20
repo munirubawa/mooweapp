@@ -1,0 +1,29 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "09a90045f990c1e50857197b969eb038ac71e2eb23b62e26c0d07a610c61f4f5"
+build_start_time: [1688950030, 503400000]
+build_end_time: [1688950032, 488841000]
+inputs:
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift"
+  : [1688872395, 345892961]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift"
+  : [1688872395, 350502522]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatLoggingTestUtils.swift"
+  : [1688872395, 354702354]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatStorage.swift"
+  : [1688872395, 355580843]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsBundle.swift"
+  : [1688872395, 356273424]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsPayload.swift"
+  : [1688872395, 358303655]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift"
+  : [1688872395, 347684825]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift"
+  : [1688872395, 345104032]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift"
+  : [1688872395, 359005952]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift"
+  : [1688872395, 357616882]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift"
+  : [1688872395, 349684882]
+  ? "/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift"
+  : [1688872395, 351380388]

@@ -1,0 +1,110 @@
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/DismissedManager.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedManager.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedManager.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedManager.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedManager.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/FloatUtils.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FloatUtils.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FloatUtils.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FloatUtils.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FloatUtils.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/enumerators/GroupSort.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupSort.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupSort.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupSort.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupSort.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/DoubleUtils.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DoubleUtils.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DoubleUtils.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DoubleUtils.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DoubleUtils.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/broadcasters/receivers/DismissedNotificationReceiver.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedNotificationReceiver.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedNotificationReceiver.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedNotificationReceiver.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DismissedNotificationReceiver.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/extensions/FormatterExtension.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FormatterExtension.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FormatterExtension.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FormatterExtension.d"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/FormatterExtension.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/EnumUtils.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/EnumUtils.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/EnumUtils.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/EnumUtils.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/EnumUtils.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/enumerators/DefaultRingtoneType.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultRingtoneType.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultRingtoneType.d"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultRingtoneType.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultRingtoneType.o"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/Definitions.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/Definitions.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/Definitions.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/Definitions.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/Definitions.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/DisplayedManager.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DisplayedManager.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DisplayedManager.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DisplayedManager.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DisplayedManager.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/DateUtils.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateUtils.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateUtils.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateUtils.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateUtils.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/IntUtils.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/IntUtils.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/IntUtils.d"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/IntUtils.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/IntUtils.o"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/CancellationManager.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CancellationManager.o"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CancellationManager.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CancellationManager.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CancellationManager.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/exceptions/ExceptionCode.swift":
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionCode.dia"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionCode.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionCode.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionCode.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/extensions/DateExtension.swift":
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateExtension.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateExtension.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateExtension.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DateExtension.o"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/utils/CronUtils.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronUtils.o"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronUtils.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronUtils.d"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronUtils.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/CreatedManager.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CreatedManager.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CreatedManager.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CreatedManager.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CreatedManager.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/DefaultsManager.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultsManager.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultsManager.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultsManager.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/DefaultsManager.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/externalLibs/CronExpression.swift":
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronExpression.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronExpression.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronExpression.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/CronExpression.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/exceptions/ExceptionFactory.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionFactory.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionFactory.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionFactory.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ExceptionFactory.swiftdeps"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/enumerators/GroupAlertBehaviour.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupAlertBehaviour.o"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupAlertBehaviour.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupAlertBehaviour.swiftdeps"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/GroupAlertBehaviour.d"
+"/Users/munirubawa/development/mooweapp/ios/Pods/IosAwnCore/IosAwnCore/Classes/managers/ChannelManager.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ChannelManager.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ChannelManager.dia"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ChannelManager.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/Objects-normal/arm64/ChannelManager.o"

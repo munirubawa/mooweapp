@@ -34,31 +34,21 @@ List<String> paths = [];
      return event;
    });
   }
-
+  //TODO: get the user by doc path
   void getMemberStreams(String path){
     if(!paths.contains(path)) {
       paths.add(path);
 
-      firebaseFirestore.doc(path).snapshots().listen((event) {
+      firebaseFirestore.doc(path).get().then((event) {
         if(event.exists) {
           DocumentSnapshot member = event;
           membersByContactPath.value[path] = member;
           currentMember.value = member.data() as Map<String, dynamic>;
-          debugPrint(path);
+          debugPrint("ChatRoomController $path");
           tokens[path] = member.get(memberModel.deviceToken);
         }
       });
     }
-
-
-    // if(!paths.contains(path)){
-    //   paths.add(path);
-    //   // debugPrint(path);
-    //
-    // }
-
-    // firebaseFirestore.collection("contacts/${auth.currentUser!.uid}/recentChats").snapshots().map((query) =>
-    //     query.docs.map((item) => ChatRoom.fromSnap(item)).toList());
   }
 
 }

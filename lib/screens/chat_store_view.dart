@@ -36,13 +36,13 @@ class ChatStoreView extends StatelessWidget {
                 icon: const Icon(Icons.shopping_cart, color: kPrimaryColor,),
                 onPressed: () {
 
-                  showBarModalBottomSheet(
-                    context: context,
-                    builder: (context) => Container(
-                      color: Colors.white,
-                      child: ShoppingCartWidget(),
-                    ),
-                  );
+                  // showModalBottomSheet(
+                  //   context: context,
+                  //   builder: (context) => Container(
+                  //     color: Colors.white,
+                  //     child: ShoppingCartWidget(),
+                  //   ),
+                  // );
                 }),
             IconButton(
                 icon: const Icon(Icons.menu, color: kPrimaryColor,),

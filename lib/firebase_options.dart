@@ -44,39 +44,43 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC-0mtNzS3aLkhFtIg838ZGLAHFmU11WD4',
-    appId: '1:295186155824:web:359053cbb799b65f3660f5',
+    apiKey: 'AIzaSyAi4RqSG5MCESXfeCtsrDuj1RW4079wO1o',
+    appId: '1:295186155824:web:945b663505fd70603660f5',
     messagingSenderId: '295186155824',
     projectId: 'mooweapp',
     authDomain: 'mooweapp.firebaseapp.com',
+    databaseURL: 'https://mooweapp-default-rtdb.firebaseio.com',
     storageBucket: 'mooweapp.appspot.com',
-    measurementId: 'G-ZXJ1CW2TKC',
+    measurementId: 'G-16KYWMD2Y4',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBEVEevHU-FiExSh7j6Z6I6HEGVdDJFAbc',
-    appId: '1:295186155824:android:f44199171efa31813660f5',
+    appId: '1:295186155824:android:d58b58c5c62718193660f5',
     messagingSenderId: '295186155824',
     projectId: 'mooweapp',
+    databaseURL: 'https://mooweapp-default-rtdb.firebaseio.com',
     storageBucket: 'mooweapp.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAi4RqSG5MCESXfeCtsrDuj1RW4079wO1o',
-    appId: '1:295186155824:ios:2334c66994888f1d3660f5',
+    apiKey: 'AIzaSyChRxfVwY4FfIh54UevryYRdk1UfwfSq-0',
+    appId: '1:295186155824:ios:5c43e33ecdb91dac3660f5',
     messagingSenderId: '295186155824',
     projectId: 'mooweapp',
+    databaseURL: 'https://mooweapp-default-rtdb.firebaseio.com',
     storageBucket: 'mooweapp.appspot.com',
     androidClientId: '295186155824-7jjuf6m2ruibr2tc57rlntbbodnb55ms.apps.googleusercontent.com',
     iosClientId: '295186155824-6rdq012uu6i3fpc6dfv0kdk3ubqm6kgb.apps.googleusercontent.com',
-    iosBundleId: 'com.mowe.app',
+    iosBundleId: 'com.app.mowe',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC-0mtNzS3aLkhFtIg838ZGLAHFmU11WD4',
-    appId: '1:295186155824:ios:483b7d740a1e5a033660f5',
+    apiKey: 'AIzaSyChRxfVwY4FfIh54UevryYRdk1UfwfSq-0',
+    appId: '1:295186155824:ios:04580c96866a0ad53660f5',
     messagingSenderId: '295186155824',
     projectId: 'mooweapp',
+    databaseURL: 'https://mooweapp-default-rtdb.firebaseio.com',
     storageBucket: 'mooweapp.appspot.com',
     androidClientId: '295186155824-7jjuf6m2ruibr2tc57rlntbbodnb55ms.apps.googleusercontent.com',
     iosClientId: '295186155824-n8i9of1v42a7hncumj6vsbgkk1srr23m.apps.googleusercontent.com',

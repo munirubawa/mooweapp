@@ -211,6 +211,7 @@ enum ExtraDataType { GENERAL, ProductSize, ProductColor }
 enum ShoppingCartOrigin { SHOPPING, HISTORY }
 
 enum MarketAppBarActions { SEARCH, CANCEL_SEARCH }
+enum ContactAppBarActions { SEARCH, CANCEL_SEARCH }
 
 enum CashOutType { BUSINESS_DAY, INSTANT }
 
@@ -259,4 +260,5 @@ class EnumServices {
   PayBillActionLocation payBillActionLocation = PayBillActionLocation.BILL_LOCATION_NOT_SET;
   SameCurrencyType sameCurrencyType = SameCurrencyType.SAME_CURRENCY;
   CashOutFrom cashOutFrom = CashOutFrom.CASH_OUT_NOT_SET;
+  ContactAppBarActions appBarActions = ContactAppBarActions.CANCEL_SEARCH;
 }

@@ -9,7 +9,7 @@ ExchangeMoneyController exchangeController = ExchangeMoneyController.instance;
 PaymentsController paymentsController = PaymentsController.instance;
 ChatRoomController chatRoomController = ChatRoomController.instance;
 CollectionController momoController = CollectionController.instance;
-AddressController addressController = AddressController.instance;
+// AddressController addressController = AddressController.instance;
 StoreController storeController = StoreController.instance;
 AffiliateController affiliateController = AffiliateController.instance;
 ApiController apiController = ApiController.instance;
@@ -55,7 +55,7 @@ const COLOR_DARK_BLUE = Color.fromRGBO(20, 25, 45, 1.0);
 final box = GetStorage();
 Chat initialChat = Chat();
 DocumentSnapshot? remoteMember ;
-List<DocumentSnapshot> groupOrProjectMembers = [];
+List<DocumentSnapshot>  groupOrProjectMembers = [];
 TransactionServices transactionService = TransactionServices.instance;
 // var selectedCountryInfo = CountryInfo();
 Directory? appDocDir;
@@ -93,5 +93,5 @@ extension PrettyJson on Map<String, dynamic> {
 }
 
 
-const kPrimaryColor = Colors.blueAccent;
-// const kPrimaryColor = Color(0xFF12792E);
+// const kPrimaryColor = Colors.blueAccent;
+const kPrimaryColor = Color(0xFF12792E);

@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Debug-iphoneos/IosAwnCore/IosAwnCore.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Debug-iphoneos/IosAwnCore/IosAwnCore.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "IosAwnCore-Swift.h",
+      'external-contents': "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/IosAwnCore.build/unextended-interface-header.h",
+    }]
+    }]
+}

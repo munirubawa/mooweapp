@@ -5,7 +5,7 @@ class MooweCashScreen extends StatefulWidget {
 }
 
 class _MooweCashScreenState extends State<MooweCashScreen> {
-  double? incomeBalance;
+ late final double? incomeBalance;
   final bool _showB1 = true;
   Map<String, dynamic> firstCalculation = {};
   bool isCurrencyUSD = false;
@@ -54,7 +54,7 @@ class _MooweCashScreenState extends State<MooweCashScreen> {
                               borderRadius: BorderRadius.circular(18.0), side: const BorderSide(color: Colors.teal)))),
                       child: const Icon(Icons.unfold_more),
                       onPressed: () {
-                        showBarModalBottomSheet(
+                        showModalBottomSheet(
                           context: context,
                           builder: (context) => const MoowePayActionButton(),
                         );

@@ -87,7 +87,7 @@ class _DisplayContactRemittanceState extends State<DisplayContactRemittance> {
                 enumServices.chatTypes = ChatTypes.GROUP_CHAT;
                 // changeScreen(context, DisplayContacts(actionType: "newChat", backgroundColor: white,));
                 Get.to(
-                  () => DisplayContacts(
+                  () => const DisplayContacts(
                     backgroundColor: Colors.white,
                   ),
                 );
@@ -108,64 +108,46 @@ class _DisplayContactRemittanceState extends State<DisplayContactRemittance> {
           )
         ],
       ),
-      body: _body(),
+      body: Column(
+        children: [
+          Expanded(
+            child: _body(),
+          )
+        ],
+      ),
     );
   }
 
   Widget _body() {
     if (_permissionDenied) return const Center(child: Text('Permission denied'));
-    if (_contacts == null) return Center(child: LoadingListPage(count: 10));
+    if (contactServices.localContact.isEmpty) return Center(child: LoadingListPage(count: 10));
     return ListView.builder(
-      itemCount: _contacts!.length,
+      itemCount: contactServices.localContact.length,
       itemBuilder: (context, i) {
         return ListTile(
-          title: Text(
-            _contacts![i].displayName,
-            style: themeData!.textTheme.titleMedium,
-          ),
-          subtitle: FutureBuilder<Contact?>(
-            future: FlutterContacts.getContact(_contacts![i].id), // async work
-            builder: (BuildContext context, AsyncSnapshot<Contact?> snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.waiting:
-                  return Container();
-                default:
-                  if (snapshot.hasError) {
-                    return Container();
-                  } else {
-                    // return Text(contact?.phones.first.number??"");
-                    if (snapshot.hasData) {
-                      final Contact contact = snapshot.data!;
-
-                      if (contact.phones.isNotEmpty) {
-                        return Text(
-                          contact.phones.first.normalizedNumber,
-                          style: themeData!.textTheme.subtitle1,
-                        );
-                      } else {
-                        return Container();
-                      }
-
-                      // return Text('Phone number: ${contact?.phones.first?? contact?.phones.first.normalizedNumber}');
-                    } else {
-                      return const Text('No phone numbers');
-                    }
-                  }
-              }
-            },
-          ),
+          title: listTitle(contactServices.localContact.elementAt(i)),
+          subtitle: listSubtitle(contactServices.localContact.elementAt(i)),
           onTap: () {
-            FlutterContacts.getContact(_contacts![i].id, withPhoto: false).then((value) {
-              Get.to(
-                () => ConfirmContact(
-                  contact: value!,
-                ),
-              );
-            });
+            Get.to(
+                  () => ConfirmContact(
+                contact: contactServices.localContact.elementAt(i),
+              ),
+            );
           },
         );
       },
     );
+  }
+
+  Widget listTitle(Contact contact) {
+    return Text(
+      contact.displayName,
+      style: themeData!.textTheme.titleMedium,
+    );
+  }
+
+  Widget listSubtitle(Contact contact) {
+    return android_ios_number_display(contact.phones.first);
   }
 }
 
@@ -185,59 +167,219 @@ class ConfirmContact extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.of(context).pop();
+            Get.back();
           },
         ),
         title: Text(
           contact.displayName,
           style: themeData!.textTheme.titleMedium!.copyWith(color: Colors.white),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () async {
-              // Navigator.of(context).pop();
-              // showSearch<Member>(context: context, delegate: StartNewChat());
-            },
-          )
-        ],
       ),
-      body: Center(
-        child: Center(
-          child: ListView.builder(
-            itemCount: contact.phones.length,
-            itemBuilder: ((context, index) {
-              return ListTile(
-                title: Text(contact.phones[index].normalizedNumber.toString()),
-                onTap: () {
-                  String num = contact.phones[index].normalizedNumber.toString();
-                  print(num.length);
-                  String code = '';
-                  print(code);
-                  switch (num.length) {
-                    case 12:
-                      code = num.substring(0, 2);
-                      break;
-                    case 13:
-                      code = num.substring(0, 4);
-                      break;
-                  }
-                  if (code.isNotEmpty) {
-                    for (var element in countryInformation.values) {
-                      if (element[countryModelModel.dialingCode] == code) {
-                        print(element);
-                      }
-                    }
-                  }
-                },
-              );
-            }), // itemBuilder
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: Get.height,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: Get.width * 0.1,
+                ),
+                SizedBox(
+                  height: Get.height * 0.80,
+                  // flex: 9,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        flex: 4,
+                        child: Container(
+                          // color: Colors.green,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10), bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.2),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: const Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListTile(
+                            title: listTitle(contact),
+                            subtitle: listSubtitle(contact),
+                            trailing: contactServices.momoLogo(contact),
+                          ),
+                          // child: Center(
+                          //     child: Column(
+                          //       crossAxisAlignment: CrossAxisAlignment.start,
+                          //       mainAxisAlignment: MainAxisAlignment.center,
+                          //       children: [
+                          //         Text(
+                          //           "${contact.displayName.capitalizeFirst} ",
+                          //           maxLines: 1,
+                          //           style: themeData!.textTheme.headline6,
+                          //         ),
+                          //         Text(contactServices.cleanNumber(contact.phones.first))
+                          //       ],
+                          //     )),
+                        ),
+                      ),
+                      SizedBox(
+                        height: Get.width * 0.1,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.20,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                height: Get.height * 0.3,
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10), bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 5,
+                                      blurRadius: 7,
+                                      offset: const Offset(0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+
+                                // color: Colors.blueAccent,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text("SEND",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          color: Colors.black45,
+                                        )),
+                                    // SizedBox(
+                                    //   width: Get.width * 0.20,
+                                    // ),
+                                    Text(
+                                      "${paymentsController.numCurrency(transactionService.transactionAmount.value)} ${chatServices.localMember!.get(memberModel.currencyCode)}",
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: Get.height * 0.0254,
+                            ),
+                            Expanded(
+                              child: Container(
+                                height: Get.height * 0.2,
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10), bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 5,
+                                      blurRadius: 7,
+                                      offset: const Offset(0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "RECEIVE",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        fontSize: 16,
+                                        color: Colors.black45,
+                                      ),
+                                    ),
+                                    Obx(
+                                          () => Text(
+                                        "${paymentsController.numCurrency(exchangeController.moweReceiveRate.value)} ${contactServices.getCurrencyType(contact)}",
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Obx(
+                            () => Text(
+                          "Rate: 1: ${chatServices.localMember!.get(memberModel.currencyCode)} = "
+                              "${paymentsController.numCurrency(exchangeController.moweExchangeRate.value)} ${contactServices.getCurrencyType(contact)}"
+                              " with no fees",
+                          style: const TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black38,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      DefaultButton(
+                        text: "Send",
+                        color: Colors.blue,
+                        press: () {
+                          // if (exchangeController.exchangeSuccess.value) {
+                          //   paymentsController.checkUserPasscode(onTap: () {
+                          //     enumServices.sameCurrencyType = SameCurrencyType.CURRENCY_EXCHANGE;
+                          //     exchangeController.completeTransaction();
+                          //   });
+                          // } else {
+                          //   showToastMessage(msg: "Sorry Something went wrong");
+                          // }
+                        },
+                      ),
+                      Expanded(
+                        flex: 10,
+                        child: Container(),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  Widget listTitle(Contact contact) {
+    return Text(
+      contact.displayName,
+      style: themeData!.textTheme.titleLarge,
+    );
+  }
+
+  Widget listSubtitle(Contact contact) {
+    return android_ios_number_display(contact.phones.first);
   }
 }

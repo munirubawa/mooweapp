@@ -142,7 +142,7 @@ class ChatMoneyKeyPad extends StatelessWidget {
                     // ),
                     CustomBtn(
                       text: "Send",
-                      onTap: () {
+                      onTap: () async {
                         if (transactionService.transactionAmount.value > 0) {
                           if (transactionService.transactionAmount.value <= transactionService.accountBalance.value) {
                             // transactionService.member = member;
@@ -271,34 +271,37 @@ class ChatMoneyKeyPad extends StatelessWidget {
                                 break;
                             }
                           } else {
-                            Get.defaultDialog(
-                              barrierDismissible: false,
-                              title: "Insufficient funds",
-                              content: const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Please add funds to your wallet",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ),
-                              confirm: InkWell(
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Padding(
-                                      padding: EdgeInsets.all(18.0),
-                                      child: Text("Okay"),
-                                    )
-                                  ],
-                                ),
-                                onTap: () {
-                                  Get.back();
-                                },
-                              ),
-                            );
+                            await Vibration.hasVibrator().then((value){
+                              Vibration.vibrate();
+                            });
+                            // Get.defaultDialog(
+                            //   barrierDismissible: false,
+                            //   title: "Insufficient funds",
+                            //   content: const Center(
+                            //     child: Padding(
+                            //       padding: EdgeInsets.all(8.0),
+                            //       child: Text(
+                            //         "Please add funds to your wallet",
+                            //         textAlign: TextAlign.center,
+                            //       ),
+                            //     ),
+                            //   ),
+                            //   confirm: InkWell(
+                            //     child: Row(
+                            //       crossAxisAlignment: CrossAxisAlignment.center,
+                            //       mainAxisAlignment: MainAxisAlignment.center,
+                            //       children: const [
+                            //         Padding(
+                            //           padding: EdgeInsets.all(18.0),
+                            //           child: Text("Okay"),
+                            //         )
+                            //       ],
+                            //     ),
+                            //     onTap: () {
+                            //       Get.back();
+                            //     },
+                            //   ),
+                            // );
                           }
                         } else {
                           Get.defaultDialog(

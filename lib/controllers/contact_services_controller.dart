@@ -1,4 +1,5 @@
-import 'package:contacts_service/contacts_service.dart';
+// import 'package:contacts_service/contacts_service.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:mooweapp/export_files.dart';
 
 class ContactServices extends GetxController {
@@ -6,7 +7,7 @@ class ContactServices extends GetxController {
 
   DocumentSnapshot? newChatreciever;
   var contactsFiltered = <Contact>{};
-  RxSet<Contact> contacts = RxSet<Contact>();
+  RxSet<Contact> _lcontacts = RxSet<Contact>();
   var queryResultSet = {};
   var tempSearchStore = <Contact>{};
   // Map<String, dynamic> mooweContacts = {};
@@ -25,123 +26,187 @@ class ContactServices extends GetxController {
   // Contract? contract;
   bool fromDisplayContact = true;
   bool contactsPermissionGranted = false;
+
   // List<BuildContext> contextToPop = [];
 
   @override
   void onInit() {
     // checkPermission();
+    // _fetchContacts();
+    // FlutterContacts.addListener((){
+    //   contactServices.localContact.clear();
+    //   contactServices.fetchContacts("contacService init");
+    // });
+    print(ghanaCodes());
     super.onInit();
   }
 
-  // void listenToContacts() {
-  //   // FlutterContacts.addListener(() => getAllContacts());
-  // }
+  List<Contact> contacts = [];
+  final Set<Contact> localContact = {};
+  final Set<Contact> localContactFound ={};
+  final Set<Contact> selectedContacts = {};
+  final Set<Contact> momoSelectedContacts = {};
+  List<QueryDocumentSnapshot> snapshots = [];
+  bool permissionDenied = false;
 
-  // fireStoreSearch(Contact number) {
-  //   for (var num in number.phones) {
-  //     // debugPrint(num.normalizedNumber);
-  //     // debugPrint(num.number.replaceAll(RegExp('[^A-Za-z0-9+]'), ''));
-  //     String numPhone = num.number.replaceAll(RegExp('[^0-9+]'), '');
-  //     if (numPhone.toString().length > 10) {
-  //       FirebaseFirestore.instance.collection(dbHelper.users()).where("phone", isEqualTo: numPhone).snapshots().listen((QuerySnapshot snapshot) {
-  //         if (snapshot.docs.isNotEmpty) {
-  //           for (var docSnap in snapshot.docs) {
-  //             DocumentSnapshot member = docSnap;
-  //             if (auth.currentUser!.uid != docSnap.get(memberModel.userUID)) {
-  //               bool containsItem = mooweContacts.any((mem) => mem.get(memberModel.userUID) == member.get(memberModel.userUID));
-  //               if (!containsItem) {
-  //                 mooweContacts.add(member);
-  //               }
-  //             }
-  //           }
-  //         }
-  //       });
-  //     }
-  //   }
-  // }
+  String cleanNumber(Phone phone) {
+    return Platform.isIOS ? phone.number.toString().replaceAll(RegExp('[^+0-9]'), '') : phone.normalizedNumber.toString().replaceAll(RegExp('[^+0-9]'), '');
+  }
 
+  Future fetchContacts(String callingFrom) async {
+    if (contactServices.localContact.isEmpty) {
+      print("callingFrom $callingFrom");
+      print("runing local contacts");
 
+      if (!await FlutterContacts.requestPermission(readonly: true)) {
+        permissionDenied = true;
+      } else {
+        final contacts = await FlutterContacts.getContacts();
 
-  runContactServices() {
-    switch (enumServices.userActionType) {
-      case UserActionType.CREATE_NEW_CHAT:
-        remoteMember = selectedContact!;
-        // Get.to(() => SelectChatType());
-        break;
-      case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
-        Get.back();
-        transactionService.directTransMember = selectedContact!;
-        transactionService.context = context;
-        transactionService.runTransaction();
+        contactServices.contacts = contacts.cast<Contact>();
+        firebaseUsers();
+      }
+    } else {}
+  }
 
-        break;
-      case UserActionType.CREATE_CONTRACT:
-        Get.back();
-        Get.to(() => CreateContractScreen(
-              chatRoom: chatRoom,
-            ));
-        break;
-      case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
-      case UserActionType.SEND_CASH_IN_GROUP_CHAT:
-      case UserActionType.SEND_CASH_PROJECT_CHAT:
-      case UserActionType.SEND_CASH_TO_MOMO:
-      case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
-      case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
-      case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
-        Get.back();
-        newChatreciever = selectedContact!;
+  void firebaseUsers() {
 
-        enumServices.chatServicesActions = ChatServicesActions.ADD_MEMBER_TO_PROJECT_OR_GROUP;
-        chatServices.chatRoom = chatRoom;
-        chatServices.member = selectedContact;
-        chatServices.runChatServices();
-        break;
-      case UserActionType.PAY_INTO_CONTRACT:
-        // TODO: Handle this case.
-        break;
-      case UserActionType.PROCESS_CONTRACT:
-        // TODO: Handle this case.
-        break;
+    for (var element in contactServices.contacts) {
+      FlutterContacts.getContact(element.id).then((Contact? contact) {
+        if (contact?.phones != null && contact!.phones.isNotEmpty && cleanNumber(contact.phones.first).length > 10) {
+          momoPassThrough(contact);
+          for (var phone in contact.phones) {
+            final newContact = Contact()
+              ..name.first = contact.name.first
+              ..name.last = contact.name.last
+              ..displayName = contact.displayName
+              ..phones = [Phone(cleanNumber(phone))];
 
-      default:
-        // getAllContacts();
-        break;
+            // print(Platform.isIOS ? phone.number.toString().replaceAll(RegExp('[^+0-9]'), '') : phone.normalizedNumber);
+            if (chatServices.localMember!.get("phone") != cleanNumber(phone)) {
+              contactServices.localContact.add(newContact);
+
+              FirebaseFirestore.instance.collection(dbHelper.users()).where("phone", isEqualTo: cleanNumber(phone)).get().then((QuerySnapshot? value) {
+                if (value!.docs.isNotEmpty) {
+                  contactServices.localContactFound.add(newContact);
+                  contactServices.snapshots.add(value.docs.first);
+                }
+              });
+            }
+          }
+        }
+      });
     }
   }
 
-  // Future<String> getAllContacts() async {
-  //   print("getAllContacts");
-  //   PermissionStatus status = await Permission.contacts.status;
-  //   switch (status) {
-  //     case PermissionStatus.denied:
-  //       contactsPermissionGranted = false;
-  //       break;
-  //     case PermissionStatus.granted:
-  //       contactsPermissionGranted = true;
-  //       contacts.clear();
-  //       await FlutterContacts.getContacts(withProperties: true, withPhoto: true, withThumbnail: true).then((conts) {
-  //         for (var cont in conts) {
-  //           if (cont.displayName.isNotEmpty && cont.phones.toList().isNotEmpty) {
-  //             if (cont.phones.toList().first.number.length > 10) {
-  //               if (!contacts.contains(cont)) {
-  //                 contacts.add(cont);
-  //                 fireStoreSearch(cont);
-  //               }
-  //             }
-  //           }
-  //         }
-  //       });
-  //       break;
-  //     case PermissionStatus.restricted:
-  //       contactsPermissionGranted = false;
-  //       break;
-  //     case PermissionStatus.limited:
-  //       contactsPermissionGranted = false;
-  //       break;
-  //     case PermissionStatus.permanentlyDenied:
-  //       contactsPermissionGranted = false;
-  //       break;
-  //   }
-  //   return Future.value("string");
-  // }
+  void momoPassThrough(Contact contact) {
+    ghanaCodes().forEach((element) {
+      if (cleanNumber(contact.phones.first).contains(element)) {
+        for (var phone in contact.phones) {
+          final newContact = Contact()
+            ..name.first = contact.name.first
+            ..name.last = contact.name.last
+            ..displayName = contact.displayName
+            ..phones = [Phone(cleanNumber(phone))];
+          momoSelectedContacts.add(newContact);
+        }
+      }
+    });
+  }
+
+  Widget momoLogo(Contact contact) {
+    return logoName(contact) == ""
+        ? SizedBox(
+            height: 30,
+            width: 30,
+            child: Container(),
+          )
+        : Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage(logoName(contact)), fit: BoxFit.contain),
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+            ),
+          );
+    // ): CircleAvatar(radius: imageRadius, backgroundImage: AssetImage(logoName(contact)));
+  }
+
+  String logoName(Contact contact) {
+    String logo = "";
+    cleanList(ghanaGlobacom).forEach((code) {
+      if (cleanNumber(contact.phones.first).contains(code)) {
+        logo = "assets/momo/glo.png";
+      }
+    });
+    cleanList(ghanaMtn).forEach((code) {
+      if (cleanNumber(contact.phones.first).contains(code)) {
+        logo = "assets/momo/mtn.png";
+      }
+    });
+    cleanList(ghanaAirtelTigo).forEach((code) {
+      if (cleanNumber(contact.phones.first).contains(code)) {
+        logo = "assets/momo/tigo.png";
+      }
+    });
+    cleanList(ghanaExpresso).forEach((code) {
+      if (cleanNumber(contact.phones.first).contains(code)) {
+        logo = "assets/momo/espress.png";
+      }
+    });
+    cleanList(ghanaVodafone).forEach((code) {
+      if (cleanNumber(contact.phones.first).contains(code)) {
+        logo = "assets/momo/vodafone.jpeg";
+      }
+    });
+    return logo;
+  }
+
+  String getCurrencyType(Contact contact){
+    String cur = "";
+    ghanaCodes().forEach((element) {
+      if(cleanNumber(contact.phones.first).contains(element)){
+        cur = "GHS";
+      }
+    });
+    return cur;
+  }
+
+
+
+
+  List<String> ghanaCodes() {
+    return cleanList(ghanaGlobacom) + cleanList(ghanaMtn) + cleanList(ghanaAirtelTigo) + cleanList(ghanaExpresso) + cleanList(ghanaVodafone);
+  }
+
+  List<String> cleanList(List<String> list) {
+    return list.map((e) => "+233${e.substring(1)}").toList();
+  }
+
+  List<String> ghanaGlobacom = [
+    "023",
+  ];
+  List<String> ghanaMtn = [
+    "024",
+    "024",
+    "025",
+    "053",
+    "054",
+    "055",
+    "059",
+  ];
+  List<String> ghanaAirtelTigo = [
+    "027",
+    "057",
+    "026",
+    "056",
+  ];
+  List<String> ghanaExpresso = [
+    "028",
+  ];
+  List<String> ghanaVodafone = [
+    "020",
+    "050",
+  ];
 }

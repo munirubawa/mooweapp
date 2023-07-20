@@ -64,16 +64,21 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                 onPressed: () {
                  if(paymentsController.hasePaymentMethod)
                    {
-                     showBarModalBottomSheet(
-                       elevation: 0.0,
-                       context: context,
-                       builder: (context) => Container(
-                         color: Colors.white,
-                         child: GroupContributionsScreen(
-                                            chatRoom: widget.chatRoom,
-                                          ),
-                       ),
-                     );
+                     // showModalBottomSheet(
+                     //   isScrollControlled: true,
+                     //   elevation: 0.0,
+                     //   context: context,
+                     //   builder: (context) => Container(
+                     //     color: Colors.white,
+                     //     child: GroupContributionsScreen(
+                     //                        chatRoom: widget.chatRoom,
+                     //                      ),
+                     //   ),
+                     // );
+
+                     Get.to(()=> GroupContributionsScreen(
+                       chatRoom: widget.chatRoom,
+                     ));
                    } else {
                    addPaymentMethodController.addPaymentMethod();
                   // Get.to(()=> const AddPlaidPaymentMethod());
@@ -102,16 +107,22 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                   transactionService.chatRoom = widget.chatRoom;
                   // Get.to(()=>  ChatMoneyKeyPad(chatRoom: chatRoom, contract: Contract(),));
 
-                  showBarModalBottomSheet(
-                    context: context,
-                    builder: (context) => Container(
-                      color: Colors.white,
-                      child: ChatMoneyKeyPad(
-                        chatRoom: widget.chatRoom,
-                        // contract: Contract(),
-                      ),
-                    ),
-                  );
+                  // showModalBottomSheet(
+                  //   isScrollControlled: true,
+                  //
+                  //   context: context,
+                  //   builder: (context) => Container(
+                  //     color: Colors.white,
+                  //     child: ChatMoneyKeyPad(
+                  //       chatRoom: widget.chatRoom,
+                  //       // contract: Contract(),
+                  //     ),
+                  //   ),
+                  // );
+                  Get.to(()=> ChatMoneyKeyPad(
+                    chatRoom: widget.chatRoom,
+                    // contract: Contract(),
+                  ));
                 },
               ),
               // Expanded(
