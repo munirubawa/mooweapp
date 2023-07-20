@@ -113,15 +113,7 @@ class StoreQRCode extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    // CustomBtn(
-                                    //   text: "Request",
-                                    //   onTap: () {
-                                    //     enumServices.transactionActionType = TransactionActionType.REQUEST_PAYMENT;
-                                    //     enumServices.userActionType = UserActionType.REQUEST_PAYMENT;
-                                    //     transactionService.runTransaction();
-                                    //   },
-                                    //   bgColor: kPrimaryColor,
-                                    // ),
+
                                     CustomBtn(
                                       text: "Done",
                                       onTap: () {
