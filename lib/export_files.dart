@@ -1,7 +1,7 @@
 //## FLUTTER PACKAGES
-export 'package:awesome_notifications/awesome_notifications.dart';
+// export 'package:awesome_notifications/awesome_notifications.dart';
 export 'package:firebase_core/firebase_core.dart';
-export 'package:flutter/material.dart';
+export 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 export 'package:get/get.dart';
 export 'package:get/get_navigation/src/snackbar/snackbar.dart';
 export 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -19,7 +19,10 @@ export 'package:enum_to_string/enum_to_string.dart';
 export 'dart:convert';
 export 'package:path/path.dart' show basename;
 export 'package:image_picker/image_picker.dart';
-export 'package:google_place/google_place.dart' show GooglePlace, DetailsResult, AutocompletePrediction, DetailsResponse;
+export 'package:google_fonts/google_fonts.dart';
+export 'package:flutter_contacts/properties/phone.dart';
+
+// export 'package:google_place/google_place.dart' show GooglePlace, DetailsResult, AutocompletePrediction, DetailsResponse;
 export 'package:geoflutterfire2/geoflutterfire2.dart';
 export 'package:mooweapp/controllers/payments_controller.dart';
 export 'package:plaid_flutter/plaid_flutter.dart';
@@ -31,8 +34,6 @@ export 'dart:io' show Directory, InternetAddress, File, Platform;
 export 'package:uuid/uuid.dart';
 export 'package:flutter/services.dart';
 export 'package:mooweapp/functions/background_message_handler.dart';
-// export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-export 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 export 'package:pinput/pinput.dart';
 export 'package:intl/intl.dart' show NumberFormat, DateFormat;
 export 'package:permission_handler/permission_handler.dart';
@@ -40,32 +41,26 @@ export 'package:flutter_webrtc/flutter_webrtc.dart' show RTCPeerConnectionState,
 RTCVideoRenderer, createLocalMediaStream, MediaStreamTrack, RTCIceGatheringState, RTCSignalingState,
 RTCVideoView, Helper, RTCIceCandidate, createPeerConnection, RTCSessionDescription, RTCTrackEvent;
 export 'package:fluttertoast/fluttertoast.dart';
-// export 'package:contacts_service/contacts_service.dart';
-
-// export 'package:flutter_contacts/contact.dart';
-// export 'package:flutter_contacts/flutter_contacts.dart' show FlutterContacts;
-export 'package:get/get.dart';
 export 'package:firebase_storage/firebase_storage.dart' show Reference;
 export 'dart:ui' show ImageFilter, IsolateNameServer;
 export 'package:path_provider/path_provider.dart';
 export 'dart:async';
 export 'dart:math';
-export 'package:google_fonts/google_fonts.dart';
 export 'package:flutter_settings_ui/flutter_settings_ui.dart' show SettingsList, SettingsSection, SettingsTile;
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:flutter_form_builder/flutter_form_builder.dart';
 export 'package:form_builder_validators/form_builder_validators.dart';
-// export 'package:intl_phone_field/intl_phone_field.dart';
 export 'package:qr_flutter/qr_flutter.dart';
 export 'package:share_plus/share_plus.dart';
 export 'package:qr_code_scanner/qr_code_scanner.dart';
 export 'package:rxdart/rxdart.dart' show BehaviorSubject;
 export 'package:simple_animations/simple_animations.dart';
-export 'package:sliding_sheet/sliding_sheet.dart';
+export 'package:wtf_sliding_sheet/wtf_sliding_sheet.dart';
+
 export 'package:timeago/timeago.dart' show format ;
 export 'package:pip_view/pip_view.dart';
 export 'package:wakelock/wakelock.dart';
-// export 'package:intl_phone_field/phone_number.dart';
+
 export 'package:video_player/video_player.dart';
 export 'package:carousel_slider/carousel_controller.dart';
 export 'package:carousel_slider/carousel_slider.dart';
@@ -75,6 +70,8 @@ export 'package:file_picker/file_picker.dart';
 export 'package:intl_phone_number_input/intl_phone_number_input.dart';
 export 'package:sdp_transform/sdp_transform.dart' show parse, write;
 export 'package:firebase_app_check/firebase_app_check.dart';
+export 'package:vibration/vibration.dart';
+
 
 //## FLUTTER PACKAGES
 
@@ -110,7 +107,6 @@ export 'package:mooweapp/classes/transactions_service.dart';
 export 'package:mooweapp/classes/transaction_with_address.dart';
 export 'package:mooweapp/classes/call_action_details.dart';
 export 'package:mooweapp/classes/product_extra_data.dart';
-export 'package:mooweapp/classes/message_payload_model.dart';
 export 'package:mooweapp/classes/Product.dart';
 export 'package:mooweapp/classes/product_payload.dart';
 export 'package:mooweapp/classes/cart_item_model.dart';
@@ -151,7 +147,6 @@ export 'package:mooweapp/controllers/qr_code_controller.dart';
 export 'package:mooweapp/controllers/sandbox_payment_method_controller.dart';
 export 'package:mooweapp/controllers/store_controller.dart';
 export 'package:mooweapp/controllers/user_Controller.dart';
-export 'package:mooweapp/controllers/controller_instancese.dart';
 export 'package:mooweapp/controllers/chat_room_controller.dart';
 export 'package:mooweapp/controllers/user_profile_controller.dart';
 export 'package:mooweapp/controllers/contract_controller.dart';
@@ -162,18 +157,17 @@ export 'package:mooweapp/controllers/product_controller.dart';
 export 'package:mooweapp/controllers/database_helper_controller.dart';
 export 'package:mooweapp/controllers/authController.dart';
 export 'package:mooweapp/controllers/call_signalling_controller.dart';
-export 'package:mooweapp/controllers/user_profile_controller.dart';
 export 'package:mooweapp/controllers/contact_services_controller.dart';
 export 'package:mooweapp/controllers/pay_bill_to_a_business_controller.dart';
 //## END CONTROLLERS
 
 
 //## FUNCTIONS
-export 'package:mooweapp/functions/background_message_handler.dart';
 export 'package:mooweapp/functions/groupNamePopUp.dart';
 export 'package:mooweapp/functions/showToastMessage.dart';
 export 'package:mooweapp/functions/system_over_lay.dart';
 export 'package:mooweapp/functions/showLoading.dart';
+export 'package:mooweapp/functions/android_iOS_number_display.dart';
 //## END FUNCTIONS
 
 export 'package:mooweapp/stunt_server_url.dart';

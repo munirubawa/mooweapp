@@ -117,49 +117,49 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ],
                     ),
-                    SettingsSection(
-                      titleWidget: Column(
-                        children: const [
-                          Text("Accept Payment For Your Business")
-                        ],
-                      ),
-                      // subtitle: const Text("Registrations"),
-                      tiles: [
-                        SettingsTile(
-                          title: 'Accept Payment',
-                          subtitle: 'Sign Up',
-                          leading: const Icon(FontAwesomeIcons.moneyBill),
-                          onPressed: (BuildContext context) {
-                            enumServices.userBusinessType = UserBusinessType.ACCEPT_PAYMENT_SERVICE;
-                            businessServices.business.value.userBusinessType = UserBusinessType.ACCEPT_PAYMENT_SERVICE;
-                            Get.to(() => const RegisterBusiness());
-                          },
-                          trailing: const Text("1.85%"),
-                        ),
-                      ],
-                    ),
-                    SettingsSection(
-                      // title: "Sell on Mowe Market Place",
-                      titleWidget: Column(
-                        children: const [
-                          Text('Reach millions of customers on Mowe market place world wide')
-                        ],
-                      ),
-                      // subtitle: const Text("Registrations"),
-                      tiles: [
-                        SettingsTile(
-                          title: 'Registrations',
-                          subtitle: 'Sign Up',
-                          leading: const Icon(FontAwesomeIcons.store),
-                          onPressed: (BuildContext context) {
-                            enumServices.userBusinessType = UserBusinessType.MERCHANT_STORE;
-                            businessServices.business.value.userBusinessType = UserBusinessType.MERCHANT_STORE;
-                            Get.to(() => const RegisterBusiness());
-                          },
-                          trailing: const Text("1.85%"),
-                        ),
-                      ],
-                    ),
+                    // SettingsSection(
+                    //   titleWidget: Column(
+                    //     children: const [
+                    //       Text("Accept Payment For Your Business")
+                    //     ],
+                    //   ),
+                    //   // subtitle: const Text("Registrations"),
+                    //   tiles: [
+                    //     SettingsTile(
+                    //       title: 'Accept Payment',
+                    //       subtitle: 'Sign Up',
+                    //       leading: const Icon(FontAwesomeIcons.moneyBill),
+                    //       onPressed: (BuildContext context) {
+                    //         enumServices.userBusinessType = UserBusinessType.ACCEPT_PAYMENT_SERVICE;
+                    //         businessServices.business.value.userBusinessType = UserBusinessType.ACCEPT_PAYMENT_SERVICE;
+                    //         Get.to(() => const RegisterBusiness());
+                    //       },
+                    //       trailing: const Text("1.85%"),
+                    //     ),
+                    //   ],
+                    // ),
+                    // SettingsSection(
+                    //   // title: "Sell on Mowe Market Place",
+                    //   titleWidget: Column(
+                    //     children: const [
+                    //       Text('Reach millions of customers on Mowe market place world wide')
+                    //     ],
+                    //   ),
+                    //   // subtitle: const Text("Registrations"),
+                    //   tiles: [
+                    //     SettingsTile(
+                    //       title: 'Registrations',
+                    //       subtitle: 'Sign Up',
+                    //       leading: const Icon(FontAwesomeIcons.store),
+                    //       onPressed: (BuildContext context) {
+                    //         enumServices.userBusinessType = UserBusinessType.MERCHANT_STORE;
+                    //         businessServices.business.value.userBusinessType = UserBusinessType.MERCHANT_STORE;
+                    //         Get.to(() => const RegisterBusiness());
+                    //       },
+                    //       trailing: const Text("1.85%"),
+                    //     ),
+                    //   ],
+                    // ),
                     SettingsSection(
                       title: "App Settings",
                       tiles: [

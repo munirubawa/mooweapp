@@ -1,3 +1,4 @@
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:mooweapp/export_files.dart';
 
 enum ChatSettingOptions {
@@ -15,15 +16,23 @@ class ChatsHomeScreen extends StatefulWidget {
 class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderStateMixin {
   @override
   void initState() {
+    checkPermissionGranted();
     super.initState();
+  }
+  void checkPermissionGranted() async{
+    PermissionStatus permissionStatus = await _getContactPermission();
+    if (permissionStatus == PermissionStatus.granted) {
+      contactServices.fetchContacts("ChatHomeScree");
+
+    }
   }
 
   Future<void> _askPermissions(String routeName) async {
     PermissionStatus permissionStatus = await _getContactPermission();
     if (permissionStatus == PermissionStatus.granted) {
-       Get.to(() => DisplayContacts(
-    backgroundColor: Colors.white,
-    ));
+      Get.to(() => const DisplayContacts(
+            backgroundColor: Colors.white,
+          ));
     } else {
       _handleInvalidPermissions(permissionStatus);
     }
@@ -31,8 +40,7 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
 
   Future<PermissionStatus> _getContactPermission() async {
     PermissionStatus permission = await Permission.contacts.status;
-    if (permission != PermissionStatus.granted &&
-        permission != PermissionStatus.permanentlyDenied) {
+    if (permission != PermissionStatus.granted && permission != PermissionStatus.permanentlyDenied) {
       PermissionStatus permissionStatus = await Permission.contacts.request();
       return permissionStatus;
     } else {
@@ -42,11 +50,10 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
 
   void _handleInvalidPermissions(PermissionStatus permissionStatus) {
     if (permissionStatus == PermissionStatus.denied) {
-      final snackBar = SnackBar(content: Text('Access to contact data denied'));
+      const snackBar = SnackBar(content: Text('Access to contact data denied'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else if (permissionStatus == PermissionStatus.permanentlyDenied) {
-      final snackBar =
-      SnackBar(content: Text('Contact data not available on device'));
+      const snackBar = SnackBar(content: Text('Contact data not available on device'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
@@ -109,12 +116,12 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
                       itemBuilder: (BuildContext context) {
                         addPaymentMethodController.initializePaymentMethod();
                         return <PopupMenuEntry<ChatSettingOptions>>[
-                          PopupMenuItem<ChatSettingOptions>(
+                          const PopupMenuItem<ChatSettingOptions>(
                             value: ChatSettingOptions.SETTING,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Setting",
                                   style: TextStyle(
@@ -124,12 +131,12 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
                               ],
                             ),
                           ),
-                          PopupMenuItem<ChatSettingOptions>(
+                          const PopupMenuItem<ChatSettingOptions>(
                             value: ChatSettingOptions.ADD_PAYMENT_METHOD,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Add Payment Method",
                                   style: TextStyle(
@@ -143,17 +150,17 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
                       },
                     ),
                   ],
-                  flexibleSpace: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, bottom: 30, right: 10),
+                  flexibleSpace: const Padding(
+                    padding: EdgeInsets.only(left: 20.0, bottom: 30, right: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: EdgeInsets.all(20.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: const [],
+                            children: [],
                           ),
                         )
                       ],
@@ -161,33 +168,6 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> with TickerProviderSt
                   ),
                   floating: true,
                   pinned: true,
-                  // bottom: TabBar(
-                  //   // controller: tabController,
-                  //   tabs: [
-                  //     Tab(
-                  //       // icon: Icon(Icons.message),
-                  //       child: Text(
-                  //         "Message",
-                  //         style: themeData!.textTheme.bodyText1!.copyWith(color: Colors.white),
-                  //       ),
-                  //     ),
-                  //     // Tab(icon: Icon(Icons.menu_book), text: "Conatacts"),
-                  //     Tab(
-                  //       // icon: Icon(Icons.phone_missed),
-                  //       child: Text(
-                  //         "Calls",
-                  //         style: themeData!.textTheme.bodyText1!.copyWith(color: Colors.white),
-                  //       ),
-                  //     ),
-                  //     Tab(
-                  //       // icon: Icon(Icons.content_paste),
-                  //       child: Text(
-                  //         "SAFES",
-                  //         style: themeData!.textTheme.bodyText1!.copyWith(color: Colors.white),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                 ),
               ];
             },

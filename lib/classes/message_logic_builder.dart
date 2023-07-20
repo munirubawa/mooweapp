@@ -160,7 +160,7 @@ class RequestingMoneyWidget extends StatelessWidget {
                           EnumToString.fromString(ChatTypes.values, message!.get(messagePayloadModel.messageGroupType)) == ChatTypes.PRIVATE_CHAT
                               ? Text(
                                   message!.get(messagePayloadModel.sender)[messageSenderModel.firstName],
-                                  style: themeData!.textTheme.subtitle1,
+                                  style: themeData!.textTheme.titleMedium,
                                 )
                               : Container(),
                         ],
@@ -198,8 +198,8 @@ class RequestingMoneyWidget extends StatelessWidget {
                                 //                                       member: Member(),
                                 //                                       chatRoom: chatRoom,
                                 //                                       contract: Contract(),
-                                //                                     )
-                                showBarModalBottomSheet(
+                                //    showBarModalBottomSheet                                 )
+                                showModalBottomSheet(
                                   context: context,
                                   builder: (context) => Scaffold(
                                     backgroundColor: kPrimaryColor,

@@ -131,7 +131,7 @@ class TransactionServices extends GetxController {
     exchangeController.amountToBeExchange.value = transactionAmount.value;
     exchangeController.exchangeFrom.value = localCurrency!;
     exchangeController.exchangeTo.value = remoteCurrency!;
-    showBarModalBottomSheet(
+    showModalBottomSheet(
       context: Get.context!,
       builder: (context) => Scaffold(
         appBar: AppBar(

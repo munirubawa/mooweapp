@@ -84,13 +84,13 @@ class MarketPlaceHomeScreen extends StatelessWidget {
                               color: kPrimaryColor,
                             ),
                             onPressed: () {
-                              showBarModalBottomSheet(
-                                context: Get.context!,
-                                builder: (context) => Container(
-                                  color: Colors.white,
-                                  child: ShoppingCartWidget(),
-                                ),
-                              );
+                              // showModalBottomSheet(
+                              //   context: Get.context!,
+                              //   builder: (context) => Container(
+                              //     color: Colors.white,
+                              //     child: ShoppingCartWidget(),
+                              //   ),
+                              // );
                             },
                           ),
                           CircleAvatar(

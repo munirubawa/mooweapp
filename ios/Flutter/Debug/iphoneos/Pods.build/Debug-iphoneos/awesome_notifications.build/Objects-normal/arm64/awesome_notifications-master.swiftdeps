@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "8a3fd07414752c623548b90c4e25c30b02f0184679ac3efea610f80bcaa33129"
+build_start_time: [1688949983, 944377000]
+build_end_time: [1688949986, 829980000]
+inputs:
+  ? "/Users/munirubawa/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1/ios/Classes/lib/DartAwesomeNotificationsExtension.swift"
+  : [1686775440, 415780018]
+  ? "/Users/munirubawa/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1/ios/Classes/lib/DartBackgroundExecutor.swift"
+  : [1686775440, 414411786]
+  ? "/Users/munirubawa/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1/ios/Classes/lib/FlutterAudioUtils.swift"
+  : [1686775440, 412937338]
+  ? "/Users/munirubawa/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1/ios/Classes/lib/FlutterBitmapUtils.swift"
+  : [1686775440, 411304356]
+  ? "/Users/munirubawa/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1/ios/Classes/lib/SwiftAwesomeNotificationsPlugin.swift"
+  : [1686775440, 409215852]

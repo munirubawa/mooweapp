@@ -31,13 +31,13 @@ class ProductView extends StatelessWidget {
                       color: kPrimaryColor,
                     ),
                     onPressed: () {
-                      showBarModalBottomSheet(
-                        context: context,
-                        builder: (context) => Container(
-                          color: Colors.white,
-                          child: ShoppingCartWidget(),
-                        ),
-                      );
+                      // showModalBottomSheet(
+                      //   context: context,
+                      //   builder: (context) => Container(
+                      //     color: Colors.white,
+                      //     child: ShoppingCartWidget(),
+                      //   ),
+                      // );
                     },
                   ),
                   CircleAvatar(

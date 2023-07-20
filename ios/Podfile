@@ -1,9 +1,8 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 # ENV['COCOAPODS_DISABLE_STATS'] = 'true'
-
 project 'Runner', {
   'Debug' => :debug,
   'Profile' => :release,
@@ -34,28 +33,61 @@ target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
+
 post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      flutter_additional_ios_build_settings(target)
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-              '$(inherited)',
-              'PERMISSION_EVENTS=1',
-              'PERMISSION_REMINDERS=1',
-              'PERMISSION_CONTACTS=1',
-              'PERMISSION_CAMERA=1',
-              'PERMISSION_MICROPHONE=1',
-              'PERMISSION_SPEECH_RECOGNIZER=1',
-              'PERMISSION_PHOTOS=1',
-              'PERMISSION_LOCATION=1',
-              'PERMISSION_NOTIFICATIONS=1',
-              'PERMISSION_MEDIA_LIBRARY=1',
-              'PERMISSION_SENSORS=1',
-              'PERMISSION_BLUETOOTH=1',
-              'PERMISSION_APP_TRACKING_TRANSPARENCY=1',
-              'PERMISSION_CRITICAL_ALERTS=1'
-              ]
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+#         config.build_settings['OTHER_SWIFT_FLAGS'] = '-no-verify-emitted-module-interface'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+                      '$(inherited)',
+                      'PERMISSION_EVENTS=1',
+                      'PERMISSION_REMINDERS=1',
+                      'PERMISSION_CONTACTS=1',
+                      'PERMISSION_CAMERA=1',
+                      'PERMISSION_MICROPHONE=1',
+                      'PERMISSION_SPEECH_RECOGNIZER=1',
+                      'PERMISSION_PHOTOS=1',
+                      'PERMISSION_LOCATION=1',
+                      'PERMISSION_NOTIFICATIONS=1',
+                      'PERMISSION_MEDIA_LIBRARY=1',
+                      'PERMISSION_SENSORS=1',
+                      'PERMISSION_BLUETOOTH=1',
+                      'PERMISSION_APP_TRACKING_TRANSPARENCY=1',
+                      'PERMISSION_CRITICAL_ALERTS=1'
+                      ]
+#         config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      end
     end
   end
+    installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
 end
+
+# post_install do |installer|
+#   installer.pods_project.targets.each do |target|
+#     target.build_configurations.each do |config|
+#       flutter_additional_ios_build_settings(target)
+#       config.build_settings['ENABLE_BITCODE'] = 'NO'
+#       config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+#               '$(inherited)',
+#               'PERMISSION_EVENTS=1',
+#               'PERMISSION_REMINDERS=1',
+#               'PERMISSION_CONTACTS=1',
+#               'PERMISSION_CAMERA=1',
+#               'PERMISSION_MICROPHONE=1',
+#               'PERMISSION_SPEECH_RECOGNIZER=1',
+#               'PERMISSION_PHOTOS=1',
+#               'PERMISSION_LOCATION=1',
+#               'PERMISSION_NOTIFICATIONS=1',
+#               'PERMISSION_MEDIA_LIBRARY=1',
+#               'PERMISSION_SENSORS=1',
+#               'PERMISSION_BLUETOOTH=1',
+#               'PERMISSION_APP_TRACKING_TRANSPARENCY=1',
+#               'PERMISSION_CRITICAL_ALERTS=1'
+#               ]
+#     end
+#   end
+# end

@@ -200,7 +200,7 @@ class AuthController extends GetxController {
           debugPrint('SMS Failure:');
           verificationCode.value = "";
           if (verificationCode.value.isNotEmpty) {
-            showBarModalBottomSheet(
+            showModalBottomSheet(
               context: Get.context!,
               builder: (context) => Container(
                 color: Colors.white,
@@ -210,7 +210,7 @@ class AuthController extends GetxController {
                       height: Get.height * .1,
                     ),
                     Text(
-                      "Enter Passcode",
+                      "Enter Passcode 2",
                       style: themeData!.textTheme.headline4,
                     ),
                     SizedBox(
@@ -296,7 +296,8 @@ class AuthController extends GetxController {
   void enterPin() {
     print("enterPin_verificationId");
     print(verificationCode);
-    showBarModalBottomSheet(
+    showModalBottomSheet(
+      isScrollControlled: true,
       context: Get.context!,
       builder: (context) => Container(
         color: Colors.white,
@@ -306,7 +307,7 @@ class AuthController extends GetxController {
               height: Get.height * .1,
             ),
             Text(
-              "Enter Passcode",
+              "Enter Passcode 5",
               style: themeData!.textTheme.headline4,
             ),
             SizedBox(
@@ -323,11 +324,9 @@ class AuthController extends GetxController {
               onCompleted: (pin) => print(pin),
 
               validator: (s) {
-                // return s == '2222' ? null : 'Pin is incorrect';
                 if (s != null) {
                   Get.back();
                   String smsCode = 'xxxx';
-                  print("smsCode");
                   PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationCode.value, smsCode: s);
 
                   try {

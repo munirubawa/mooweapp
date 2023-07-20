@@ -20,17 +20,17 @@ class _MyHomeScreenState extends State<MyHomeScreen> with WidgetsBindingObserver
     chatServices.runChatServices();
     enumServices.chatServicesActions = ChatServicesActions.LOCAL_FIREBASE_LISTENERS;
     chatServices.runChatServices();
-    contactPermission();
+    // contactPermission();
     // AwesomeNotifications().setListeners(onActionReceivedMethod: onActionReceivedMethod).asStream();
     WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
 
-  void contactPermission() async {
-    bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
-    if(!isAllowed) Future.delayed(const Duration(seconds: 3), ()=>     NotificationController.initializePushPermissions());
-
-  }
+  // void contactPermission() async {
+  //   bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
+  //   if(!isAllowed) Future.delayed(const Duration(seconds: 3), ()=>     NotificationController.initializePushPermissions());
+  //
+  // }
 
 
   @override

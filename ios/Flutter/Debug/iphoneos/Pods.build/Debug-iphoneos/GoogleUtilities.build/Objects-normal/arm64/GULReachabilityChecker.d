@@ -1,0 +1,8 @@
+dependencies: \
+  /Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/GoogleUtilities.build/module.modulemap \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityChecker.m \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/Public/GoogleUtilities/GULReachabilityChecker.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityChecker+Internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityMessageCode.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLogger.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLoggerLevel.h

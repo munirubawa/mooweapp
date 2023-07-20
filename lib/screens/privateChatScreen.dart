@@ -68,16 +68,15 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
                               }
                               userProfileController.chatRoom = widget.chatRoom;
                               userProfileController.member = mem;
-                              showBarModalBottomSheet(
-                                context: context,
-                                builder: (context) => Container(
-                                  color: Colors.white,
-                                  child: ShowUserProfileOptions(),
-                                ),
-                              );
-                              // Get.to(() => ShowUserProfileOptions(
-                              //   member: mem,
-                              // ));
+                              // showModalBottomSheet(
+                              //   isScrollControlled: true,
+                              //   context: context,
+                              //   builder: (context) => Container(
+                              //     color: Colors.white,
+                              //     child: ShowUserProfileOptions(),
+                              //   ),
+                              // );
+                              Get.to(() => ShowUserProfileOptions());
                             },
                             child: Row(
                               children: [
@@ -120,16 +119,15 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
                             onTap: () {
                               userProfileController.chatRoom = widget.chatRoom!;
                               userProfileController.member = mem;
-                              showBarModalBottomSheet(
-                                context: context,
-                                builder: (context) => Container(
-                                  color: Colors.white,
-                                  child: ShowUserProfileOptions(),
-                                ),
-                              );
-                              // Get.to(() => ShowUserProfileOptions(
-                              //   member: mem,
-                              // ));
+                              // showModalBottomSheet(
+                              //   context: context,
+                              //   builder: (context) => Container(
+                              //     color: Colors.white,
+                              //     child: ShowUserProfileOptions(),
+                              //   ),
+                              // );
+                              Get.to(() => ShowUserProfileOptions(
+                              ));
                             },
                             child: Row(
                               children: [
@@ -175,18 +173,22 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
                       transactionService.chatRoom = widget.chatRoom;
                       transactionService.context = context;
                       debugPrint("semd money in chat");
-
-                      showBarModalBottomSheet(
-                        context: context,
-                        builder: (context) => Container(
-                          color: Colors.white,
-                          child: ChatMoneyKeyPad(
-                            member: mem,
-                            chatRoom: widget.chatRoom,
-                            // contract: Contract(),
-                          ),
-                        ),
-                      );
+                      Get.to(()=> ChatMoneyKeyPad(
+                        member: mem,
+                        chatRoom: widget.chatRoom,
+                        // contract: Contract(),
+                      ));
+                      // showModalBottomSheet(
+                      //   context: context,
+                      //   builder: (context) => Container(
+                      //     color: Colors.white,
+                      //     child: ChatMoneyKeyPad(
+                      //       member: mem,
+                      //       chatRoom: widget.chatRoom,
+                      //       // contract: Contract(),
+                      //     ),
+                      //   ),
+                      // );
                     } else {
                       addPaymentMethodController.addPaymentMethod();
                       // Get.to(() => const AddPlaidPaymentMethod());
@@ -217,12 +219,12 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
                       }
                     },
                     itemBuilder: (BuildContext context) => <PopupMenuEntry<MakeCallOptions>>[
-                      PopupMenuItem<MakeCallOptions>(
+                      const PopupMenuItem<MakeCallOptions>(
                         value: MakeCallOptions.call,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Icon(Icons.call, color: Colors.black),
                             Text(
                               "Voice",
@@ -233,12 +235,12 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
                           ],
                         ),
                       ),
-                      PopupMenuItem<MakeCallOptions>(
+                      const PopupMenuItem<MakeCallOptions>(
                         value: MakeCallOptions.video,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Icon(Icons.videocam_sharp, color: Colors.black),
                             Text(
                               "Video",
@@ -265,7 +267,7 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
   Widget lastSeenOrActive(DocumentSnapshot member) {
     return Obx(() {
       String contactPath = widget.chatRoom!.members!.firstWhere((element) => element != dbHelper.user());
-      chatRoomController.getMemberStreams(contactPath);
+      // chatRoomController.getMemberStreams(contactPath);
       DocumentSnapshot mem = chatRoomController.membersByContactPath.value[contactPath]!;
 
       return chatRoomController.currentMember.value[memberModel.online] != null

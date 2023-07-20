@@ -109,27 +109,27 @@ class CartController extends GetxController {
   }
 
   bool processCheckOutProcess = false;
-  bool addShippingAddress() {
-    if (addressController.address.value.isNotEmpty) {
-      if (addressController.state.value.isNotEmpty) {
-        if (addressController.city.value.isNotEmpty) {
-          if (addressController.zip.value.isNotEmpty) {
-            cartController.shippingAddress = "${addressController.address.value}, ${addressController.city.value} ${addressController.state.value} ${addressController.zip.value}";
-            addressController.isAddressSelected.value = true;
-          } else {
-            showToastMessage(msg: "Zip is empty");
-          }
-        } else {
-          showToastMessage(msg: "City is empty");
-        }
-      } else {
-        showToastMessage(msg: "State is empty");
-      }
-    } else {
-      showToastMessage(msg: "Address is empty");
-    }
-    return addressController.isAddressSelected.value;
-  }
+  // bool addShippingAddress() {
+  //   if (addressController.address.value.isNotEmpty) {
+  //     if (addressController.state.value.isNotEmpty) {
+  //       if (addressController.city.value.isNotEmpty) {
+  //         if (addressController.zip.value.isNotEmpty) {
+  //           cartController.shippingAddress = "${addressController.address.value}, ${addressController.city.value} ${addressController.state.value} ${addressController.zip.value}";
+  //           addressController.isAddressSelected.value = true;
+  //         } else {
+  //           showToastMessage(msg: "Zip is empty");
+  //         }
+  //       } else {
+  //         showToastMessage(msg: "City is empty");
+  //       }
+  //     } else {
+  //       showToastMessage(msg: "State is empty");
+  //     }
+  //   } else {
+  //     showToastMessage(msg: "Address is empty");
+  //   }
+  //   return addressController.isAddressSelected.value;
+  // }
 
   Future<void> changeCartTotalPrice() async {
     print("totalCartPrice.value");

@@ -92,16 +92,41 @@ class MoowePayActionButton extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: CustomBtn(
-                  text: "Pay a Bill",
+                child: CustomBtn2(
                   onTap: () async {
-                    Get.back();
-                    enumServices.businessServiceAction = BusinessServiceAction.PAY_A_BILL;
-                    enumServices.payBillActionLocation = PayBillActionLocation.PAY_A_BILL_FROM_WALLET;
 
-                    Get.to(() => DisplayBusinessContacts(), binding: BusinessBinding());
+
+                    Get.back();
+                    transactionService.userBalance().then((value) async {
+                      if(transactionService.accountBalance.value < transactionService.transactionAmount.value){
+                        await Vibration.hasVibrator().then((value){
+                          Vibration.vibrate();
+                        });
+                      } else {
+                        enumServices.userActionType = UserActionType.SEND_CASH_TO_MOMO;
+                        Get.to(() =>  const DisplayContacts());
+                      }
+                    });
+
+                    // Get.to(() =>  DisplayContactRemittance());
                   },
                   bgColor: kPrimaryColor,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.send_rounded,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Remit",
+                        style: themeData!.textTheme.headline6!.copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -124,72 +149,61 @@ class MoowePayActionButton extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: CustomBtn2(
-                  onTap: () async {
-                    Get.back();
-                    // enumServices.cameraScanLocation = CameraScanLocation.CAMERA_FROM_WALLET;
-                    Get.to(() =>  DisplayContactRemittance());
-                  },
-                  bgColor: kPrimaryColor,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.send_rounded,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Remit",
-                        style: themeData!.textTheme.headline6!.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              // Padding(
-              //   padding: const EdgeInsets.all(15.0),
-              //   child: CustomBtn(
-              //     text: "Add Cash",
-              //     onTap: () async {
-              //       enumServices.transactionActionType = TransactionActionType.CASH_IN_FROM_BANK;
-              //       paymentsController.checkPaymentMethod();
-              //       if (await Permission.contacts.status.isGranted) {
-              //         if (transactionService.transactionAmount > 0) {
-              //           Get.back();
-              //           addPaymentMethodController.initializePaymentMethod();
-              //           // print("after initializing payment method  ${transactionService.transactionAmount}");
-              //           // print(dbHelper.paymentMethodPath());
-              //           if (paymentsController.hasePaymentMethod && userPaymentMethod.defaultPaymentMethodId != "") {
-              //             paymentsController.checkUserPasscode(onTap: () async {
-              //               paymentsController.payWithExistingPaymentMethod(
-              //                 amount: (transactionService.transactionAmount).toInt().truncate().toString(),
-              //                 currency: chatServices.localMember!.get(memberModel.currencyCode)!,
-              //               );
-              //             });
-              //           } else {
-              //             addPaymentMethodController.addPaymentMethod();
-              //           }
-              //         } else {
-              //           showToastMessage(msg: "Type an amount", backgroundColor: Colors.green, timeInSecForIosWeb: timeInSecForIosWeb);
-              //         }
-              //       } else {
-              //         await Permission.contacts.request();
-              //       }
-              //       runSystemOverlay();
-              //     },
-              //     bgColor: kPrimaryColor,
-              //   ),
-              // ),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //
+          //
+          //     Padding(
+          //       padding: const EdgeInsets.all(15.0),
+          //       child: CustomBtn(
+          //         text: "Pay a Bill",
+          //         onTap: () async {
+          //           Get.back();
+          //           enumServices.businessServiceAction = BusinessServiceAction.PAY_A_BILL;
+          //           enumServices.payBillActionLocation = PayBillActionLocation.PAY_A_BILL_FROM_WALLET;
+          //
+          //           Get.to(() => DisplayBusinessContacts(), binding: BusinessBinding());
+          //         },
+          //         bgColor: kPrimaryColor,
+          //       ),
+          //     ),
+          //     // Padding(
+          //     //   padding: const EdgeInsets.all(15.0),
+          //     //   child: CustomBtn(
+          //     //     text: "Add Cash",
+          //     //     onTap: () async {
+          //     //       enumServices.transactionActionType = TransactionActionType.CASH_IN_FROM_BANK;
+          //     //       paymentsController.checkPaymentMethod();
+          //     //       if (await Permission.contacts.status.isGranted) {
+          //     //         if (transactionService.transactionAmount > 0) {
+          //     //           Get.back();
+          //     //           addPaymentMethodController.initializePaymentMethod();
+          //     //           // print("after initializing payment method  ${transactionService.transactionAmount}");
+          //     //           // print(dbHelper.paymentMethodPath());
+          //     //           if (paymentsController.hasePaymentMethod && userPaymentMethod.defaultPaymentMethodId != "") {
+          //     //             paymentsController.checkUserPasscode(onTap: () async {
+          //     //               paymentsController.payWithExistingPaymentMethod(
+          //     //                 amount: (transactionService.transactionAmount).toInt().truncate().toString(),
+          //     //                 currency: chatServices.localMember!.get(memberModel.currencyCode)!,
+          //     //               );
+          //     //             });
+          //     //           } else {
+          //     //             addPaymentMethodController.addPaymentMethod();
+          //     //           }
+          //     //         } else {
+          //     //           showToastMessage(msg: "Type an amount", backgroundColor: Colors.green, timeInSecForIosWeb: timeInSecForIosWeb);
+          //     //         }
+          //     //       } else {
+          //     //         await Permission.contacts.request();
+          //     //       }
+          //     //       runSystemOverlay();
+          //     //     },
+          //     //     bgColor: kPrimaryColor,
+          //     //   ),
+          //     // ),
+          //   ],
+          // ),
 
           // const Padding(
           //   padding: EdgeInsets.all(15.0),

@@ -3,363 +3,41 @@ import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:mooweapp/export_files.dart';
 import 'package:shimmer/shimmer.dart';
 
-// import 'package:contacts_service/contacts_service.dart' as contacts;
 class DisplayContacts extends StatefulWidget {
-  ChatRoom? chatRoom = ChatRoom();
-  Color? backgroundColor;
+  final ChatRoom? chatRoom;
+  final Color? backgroundColor;
 
-  DisplayContacts({Key? key, this.chatRoom, this.backgroundColor = kPrimaryColor}) : super(key: key);
+  const DisplayContacts({Key? key, this.chatRoom, this.backgroundColor = kPrimaryColor}) : super(key: key);
 
   @override
   State<DisplayContacts> createState() => _DisplayContactsState();
 }
 
 class _DisplayContactsState extends State<DisplayContacts> {
-  List<Contact>? _contacts;
-  List<Contact>? _contactsEditing;
-  bool _permissionDenied = false;
-  List<String> contactData = [];
-  List<String> userIndex = [];
   int indexToInsert = 0;
   bool switchToGroup = false;
+
+  DocumentSnapshot? documentSnapshot;
+  Contact? _currentContact;
+
   @override
   void initState() {
     super.initState();
-    _fetchContacts();
-    contactData.clear();
+    // _fetchContacts();
+    contactServices.selectedContacts.clear();
+    // contactServices.localContactFound.clear();
+
+    // FlutterContacts.addListener(() => firebaseUsers());
   }
 
-  Future _fetchContacts() async {
-    if (!await FlutterContacts.requestPermission(readonly: true)) {
-      setState(() => _permissionDenied = true);
-    } else {
-      final contacts = await FlutterContacts.getContacts();
-
-      setState(() {
-        _contacts = contacts.cast<Contact>();
-      });
-
-      // print("_fetchContacts ${_contacts!.length}");
-    }
+  @override
+  void dispose() {
+    enumServices.appBarActions = ContactAppBarActions.CANCEL_SEARCH;
+    enumServices.userActionType = UserActionType.USER_ACTION_NOT_SET;
+    // TODO: implement dispose
+    super.dispose();
   }
 
-  Widget _body() {
-    if (_permissionDenied) return const Center(child: Text('Permission denied'));
-    if (_contacts == null) return Center(child: LoadingListPage(count: 10));
-    return ListView.builder(
-      itemCount: _contacts!.length,
-      itemBuilder: (context, i) {
-        DocumentSnapshot? documentSnapshot;
-        return ListTile(
-          title: Text(
-            _contacts![i].displayName,
-            style: themeData!.textTheme.titleMedium,
-          ),
-          subtitle: FutureBuilder<Contact?>(
-            future: FlutterContacts.getContact(_contacts![i].id), // async work
-            builder: (BuildContext context, AsyncSnapshot<Contact?> snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.waiting:
-                  return Container();
-                default:
-                  if (snapshot.hasError) {
-                    return Container();
-                  } else {
-                    // return Text(contact?.phones.first.number??"");
-                    if (snapshot.hasData) {
-                      final Contact contact = snapshot.data!;
-
-                      if (contact.phones.isNotEmpty) {
-                        return Text(
-                          contact.phones.first.normalizedNumber,
-                          style: themeData!.textTheme.subtitle1,
-                        );
-                      } else {
-                        return Container();
-                      }
-
-                      // return Text('Phone number: ${contact?.phones.first?? contact?.phones.first.normalizedNumber}');
-                    } else {
-                      return const Text('No phone numbers');
-                    }
-                  }
-              }
-            },
-          ),
-          trailing: switchToGroup
-              ? userIndex.contains(_contacts![i].id)
-                  ? Checkbox(
-                      value: contactData.contains(_contacts![i].id),
-                      onChanged: (bool? val) {
-                        setState(() {
-                          if (contactData.contains(_contacts![i].id)) {
-                            contactData.remove(_contacts![i].id);
-                          } else {
-                            contactData.add(_contacts![i].id);
-                          }
-                        });
-                      },
-                    )
-                  : const SizedBox(height: 15)
-              : SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: FutureBuilder<Contact?>(
-                    future: FlutterContacts.getContact(_contacts![i].id), // async work
-                    builder: (BuildContext context, AsyncSnapshot<Contact?> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.waiting:
-                          return Container();
-                        default:
-                          if (snapshot.hasError) {
-                            return const Text("none");
-                          } else {
-                            // return Text(contact?.phones.first.number??"");
-                            if (snapshot.hasData) {
-                              final Contact contact = snapshot.data!;
-                              if (contact.phones.isNotEmpty) {
-                                return FutureBuilder<QuerySnapshot>(
-                                  future: FirebaseFirestore.instance.collection(dbHelper.users()).where("phone", isEqualTo: contact.phones.first.normalizedNumber).get(), // async work
-                                  builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                                    switch (snapshot.connectionState) {
-                                      case ConnectionState.waiting:
-                                        return Container();
-                                      default:
-                                        if (snapshot.hasError) {
-                                          return Text('Error: ${snapshot.error}');
-                                        } else {
-                                          // bool? found =   snapshot.data?.docs.isNotEmpty;
-                                          if (!snapshot.hasData) {
-                                            return InkWell(
-                                              onTap: () {
-                                                print("well 1");
-                                              },
-                                              child: const Text("Invite 1"),
-                                            );
-                                          } else {
-                                            if (snapshot.data!.docs.isNotEmpty) {
-                                              userIndex.add(_contacts![i].id);
-                                              documentSnapshot = snapshot.data!.docs.first;
-                                              return CircleAvatar(radius: imageRadius, backgroundImage: const AssetImage('assets/ic_launcher_round.png'));
-                                            } else {
-                                              return InkWell(
-                                                onTap: sharInvite,
-                                                child: const Text("Invite 2"),
-                                              );
-                                            }
-                                          }
-                                        }
-                                    }
-                                  },
-                                );
-                              } else {
-                                return Container();
-                              }
-                            } else {
-                              return Container();
-                            }
-                            // return Text('Phone number: ${contact?.phones.first?? contact?.phones.first.normalizedNumber}');
-                          }
-                      }
-                    },
-                  ),
-                ),
-          onLongPress: () {
-            switchToGroup = !switchToGroup;
-            if (enumServices.chatTypes == ChatTypes.PRIVATE_CHAT) {
-              enumServices.chatTypes = ChatTypes.GROUP_CHAT;
-            } else {
-              enumServices.chatTypes = ChatTypes.PRIVATE_CHAT;
-            }
-            contactData.clear();
-            setState(() {});
-          },
-          onTap: () {
-            print(enumServices.chatTypes);
-            print(userIndex.contains(_contacts![i].id));
-
-            if (enumServices.chatTypes == ChatTypes.PRIVATE_CHAT) {
-              DocumentSnapshot<Object?>? member = documentSnapshot;
-              contactServices.context = context;
-              transactionService.context = context;
-              contactServices.selectedContact = member;
-              contactServices.newChat = initialChat;
-              contactServices.chatRoom = widget.chatRoom;
-              transactionService.chatRoom = widget.chatRoom;
-
-              // contactServices.contract = contract;
-              transactionService.member = member;
-              remoteMember = member;
-              switch (enumServices.userActionType) {
-                case UserActionType.CREATE_NEW_CHAT:
-                  // TODO: Handle this case.
-                  // Navigator.of(context).pop();
-                  switch (enumServices.chatTypes!) {
-                    case ChatTypes.PRIVATE_CHAT:
-                      // TODO: Handle this case.
-                      // chatServices.runChatServices();
-                      if (userIndex.contains(_contacts![i].id)) {
-                        print(documentSnapshot?.data());
-
-                        var chat = currentChats.firstWhereOrNull((element) {
-                          return element.members!.contains(member?.get(memberModel.contactPath)) &&
-                              element.chatType == enumServices.chatTypes &&
-                              element.members!.contains(chatServices.localMember!.get(memberModel.contactPath));
-                        });
-                        var userChatRoomInfo = userChatRoom.firstWhereOrNull((element) {
-                          return chat != null && chat.chatRoomChatsCollection == element.chatRoom;
-                        });
-                        groupOrProjectMembers.add(member!);
-
-                        if (chat == null) {
-                          chatServices.runChatServices();
-                        } else {
-                          Get.to(() => PrivateChatScreen(chatRoom: chat, userChatRoom: userChatRoomInfo));
-                        }
-                      } else {
-                        Get.defaultDialog(
-                          title: "destruct",
-                          content: const Text("there is nothing to do"),
-                        );
-                      }
-                      break;
-                    case ChatTypes.GROUP_CHAT:
-
-                      // TODO: Handle this case.
-                      initialChat.chatType = ChatTypes.GROUP_CHAT;
-                      // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
-                      enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-                      // chatServices.context = context;
-
-                      // Get.to(()=> SelectCurrency( actionType: actionsType));
-                      groupNamePushNavigator(context);
-                      break;
-                    case ChatTypes.PROJECT_CHAT:
-                      // TODO: Handle this case.
-                      initialChat.chatType = ChatTypes.PROJECT_CHAT;
-                      enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-                      // chatServices.context = context;
-                      // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
-                      // Get.to(()=>  SelectCurrency());
-                      groupNamePushNavigator(context);
-                      break;
-                    case ChatTypes.FUND_RAISE:
-                      // TODO: Handle this case.
-                      break;
-                    case ChatTypes.SUSU:
-                      // TODO: Handle this case.
-                      break;
-                    case ChatTypes.BUSINESS_CHAT:
-                      // TODO: Handle this case.
-                      break;
-                    case ChatTypes.STORE_CHAT:
-                      // TODO: Handle this case.
-                      break;
-                  }
-                  break;
-                case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
-                  // TODO: Handle this case.
-                  Navigator.of(context).pop();
-                  transactionService.runTransaction();
-                  break;
-                case UserActionType.CREATE_CONTRACT:
-                  // TODO: Handle this case.
-                  break;
-                case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-                  break;
-                case UserActionType.SEND_CASH_IN_GROUP_CHAT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.SEND_CASH_PROJECT_CHAT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.SEND_CASH_TO_MOMO:
-                  // TODO: Handle this case.
-                  // GetCurrencyByNumber getCurrencyByNumber = GetCurrencyByNumber(transactionService.member!.phone!);
-                  // if (getCurrencyByNumber.getCurrency() != "unknown") {
-                  //   Navigator.of(context).pop();
-                  //   changeScreen(
-                  //       context,
-                  //       MomoHomeScreen(
-                  //         contactCurrency: getCurrencyByNumber.getCurrency(),
-                  //         userCurrency: chatServices.localUser!.currency,
-                  //         member: transactionService.member,
-                  //       ));
-                  // } else {
-                  //   unKnownCurrency(context);
-                  // }
-
-                  break;
-                case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-                  break;
-                case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
-                  // TODO: Handle this case.
-                  Get.back();
-                  chatServices.member = documentSnapshot;
-                  chatServices.runChatServices();
-                  break;
-                case UserActionType.PAY_INTO_CONTRACT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.PROCESS_CONTRACT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.BILL_PAY:
-                  // TODO: Handle this case.
-                  break;
-                case UserActionType.REQUEST_PAYMENT:
-                  // TODO: Handle this case.
-                  transactionService.runTransaction();
-
-                  break;
-                case UserActionType.TRANSFER_CASH_TO_BANK:
-                  // TODO: Handle this case.
-                  break;
-                case UserActionType.ADD_MEMBER_TO_BUSINESS_ACCOUNT:
-                  // TODO: Handle this case.
-                  Navigator.of(context).pop();
-                  chatServices.runChatServices();
-                  break;
-                case UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT:
-                  // TODO: Handle this case.
-                  break;
-                case UserActionType.USER_ACTION_NOT_SET:
-                  // TODO: Handle this case.
-                  break;
-              }
-            }
-          },
-        );
-      },
-    );
-  }
-
-  DocumentSnapshot? selectedContact;
-
-  Chat newChat = Chat(
-    firstTimeMessage: true,
-    read: false,
-    time: Timestamp.now(),
-  );
-
-  // final contract = locator.get<Contract>();
   @override
   Widget build(BuildContext context) {
     // newChatAction = actionType;
@@ -376,303 +54,361 @@ class _DisplayContactsState extends State<DisplayContacts> {
             Navigator.of(context).pop();
           },
         ),
-        title: enumServices.userActionType != UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT
-            ? Row(
-                children: [
-                  TextButton(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        // Text(
-                        //   "Group",
-                        //   style: TextStyle(
-                        //     color: Colors.black,
-                        //   ),
-                        // )
-                      ],
-                    ),
-                    onPressed: () {
-                      Get.back();
-                      enumServices.openContactsScreenOrigin = OpenContactsScreenOrigin.FROM_CHAT_PAGE;
-                      enumServices.userActionType = UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-                      enumServices.chatTypes = ChatTypes.GROUP_CHAT;
-                      // changeScreen(context, DisplayContacts(actionType: "newChat", backgroundColor: white,));
-                      Get.to(() => DisplayContacts(
-                            backgroundColor: Colors.white,
-                          ));
-                    },
-                  ),
-                ],
-              )
-            : const Text("Select a contact"),
+        title: enumServices.userActionType == UserActionType.SEND_CASH_TO_MOMO
+            ? Container()
+            : enumServices.appBarActions == ContactAppBarActions.CANCEL_SEARCH
+                ? enumServices.userActionType == UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT
+                    ? Row(
+                        children: [
+                          TextButton(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                enumServices.userActionType == UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT || enumServices.userActionType == UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT
+                                    ? Text(
+                                        "${groupOrProjectMembers.length} Selected",
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    : Container(),
+                              ],
+                            ),
+                            onPressed: () {
+                              Get.back();
+                              enumServices.openContactsScreenOrigin = OpenContactsScreenOrigin.FROM_CHAT_PAGE;
+                              enumServices.userActionType = UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
+                              enumServices.chatTypes = ChatTypes.GROUP_CHAT;
+                              // changeScreen(context, DisplayContacts(actionType: "newChat", backgroundColor: white,));
+                              Get.to(() => const DisplayContacts(
+                                    backgroundColor: Colors.white,
+                                  ));
+                            },
+                          ),
+                        ],
+                      )
+                    : const Text("Select a contact")
+                : Container(),
         actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-            onPressed: () async {
-              // Navigator.of(context).pop();
-              // showSearch<Member>(context: context, delegate: StartNewChat());
-            },
-          )
+          enumServices.appBarActions == ContactAppBarActions.CANCEL_SEARCH
+              ? IconButton(
+                  icon: const Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  onPressed: () async {
+                    enumServices.appBarActions = ContactAppBarActions.SEARCH;
+                    print("contactServices.snapshots ${contactServices.snapshots.length}");
+                    setState(() {});
+                    // Navigator.of(context).pop();
+                    // showSearch<Member>(context: context, delegate: StartNewChat());
+                  },
+                )
+              : IconButton(
+                  icon: const Icon(
+                    Icons.cancel,
+                    color: Colors.white,
+                  ),
+                  onPressed: () async {
+                    enumServices.appBarActions = ContactAppBarActions.CANCEL_SEARCH;
+                    setState(() {});
+                    // Navigator.of(context).pop();
+                    // showSearch<Member>(context: context, delegate: StartNewChat());
+                  },
+                ),
         ],
       ),
-      body: _body(),
-      // body: Container(
-      //   height: Get.height,
-      //   width: Get.width,
-      //   color: Theme.of(context).primaryColor,
-      //   child: Column(
-      //     children: [
-      //       Expanded(
-      //         child: ListView.builder(
-      //             shrinkWrap: true,
-      //             itemCount: contactServices.mooweContacts.length,
-      //             itemBuilder: (context, index) {
-      //               // ContactBody(member: ,);
-      //               return ContactBody(
-      //                   member: contactServices.mooweContacts.elementAt(index),
-      //                   press: () {
-      //                     DocumentSnapshot member = contactServices.mooweContacts.elementAt(index);
-      //                     contactServices.context = context;
-      //                     transactionService.context = context;
-      //                     contactServices.selectedContact = member;
-      //                     contactServices.newChat = initialChat;
-      //                     contactServices.chatRoom = widget.chatRoom;
-      //                     transactionService.chatRoom = widget.chatRoom;
-      //
-      //                     // contactServices.contract = contract;
-      //                     transactionService.member = member;
-      //                     remoteMember = member;
-      //                     switch (enumServices.userActionType) {
-      //                       case UserActionType.CREATE_NEW_CHAT:
-      //                         // TODO: Handle this case.
-      //                         Navigator.of(context).pop();
-      //                         // Get.to(()=>  SelectChatType());
-      //                         switch (enumServices.chatTypes!) {
-      //                           case ChatTypes.PRIVATE_CHAT:
-      //                             // TODO: Handle this case.
-      //                             // chatServices.runChatServices();
-      //                             var chat = currentChats.firstWhereOrNull((element) {
-      //                               return element.members!.contains(member.get(memberModel.contactPath)) &&
-      //                                   element.chatType == enumServices.chatTypes &&
-      //                                   element.members!.contains(chatServices.localMember!.get(memberModel.contactPath));
-      //                             });
-      //                             var userChatRoomInfo = userChatRoom.firstWhereOrNull((element) {
-      //                               return chat != null && chat.chatRoomChatsCollection == element.chatRoom;
-      //                             });
-      //                             groupOrProjectMembers.add(member);
-      //
-      //                             if (chat == null) {
-      //                               chatServices.runChatServices();
-      //                             } else {
-      //                               Get.to(() => PrivateChatScreen(chatRoom: chat, userChatRoom: userChatRoomInfo));
-      //                             }
-      //
-      //                             break;
-      //                           case ChatTypes.GROUP_CHAT:
-      //
-      //                             // TODO: Handle this case.
-      //                             initialChat.chatType = ChatTypes.GROUP_CHAT;
-      //                             // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
-      //                             enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-      //                             // chatServices.context = context;
-      //
-      //                             // Get.to(()=> SelectCurrency( actionType: actionsType));
-      //                             groupNamePushNavigator(context);
-      //                             break;
-      //                           case ChatTypes.PROJECT_CHAT:
-      //                             // TODO: Handle this case.
-      //                             initialChat.chatType = ChatTypes.PROJECT_CHAT;
-      //                             enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-      //                             // chatServices.context = context;
-      //                             // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
-      //                             // Get.to(()=>  SelectCurrency());
-      //                             groupNamePushNavigator(context);
-      //                             break;
-      //                           case ChatTypes.FUND_RAISE:
-      //                             // TODO: Handle this case.
-      //                             break;
-      //                           case ChatTypes.SUSU:
-      //                             // TODO: Handle this case.
-      //                             break;
-      //                           case ChatTypes.BUSINESS_CHAT:
-      //                             // TODO: Handle this case.
-      //                             break;
-      //                           case ChatTypes.STORE_CHAT:
-      //                             // TODO: Handle this case.
-      //                             break;
-      //                         }
-      //                         break;
-      //                       case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
-      //                         // TODO: Handle this case.
-      //                         Navigator.of(context).pop();
-      //                         transactionService.runTransaction();
-      //                         break;
-      //                       case UserActionType.CREATE_CONTRACT:
-      //                         // TODO: Handle this case.
-      //                         break;
-      //                       case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //                         break;
-      //                       case UserActionType.SEND_CASH_IN_GROUP_CHAT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.SEND_CASH_PROJECT_CHAT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.SEND_CASH_TO_MOMO:
-      //                         // TODO: Handle this case.
-      //                         // GetCurrencyByNumber getCurrencyByNumber = GetCurrencyByNumber(transactionService.member!.phone!);
-      //                         // if (getCurrencyByNumber.getCurrency() != "unknown") {
-      //                         //   Navigator.of(context).pop();
-      //                         //   changeScreen(
-      //                         //       context,
-      //                         //       MomoHomeScreen(
-      //                         //         contactCurrency: getCurrencyByNumber.getCurrency(),
-      //                         //         userCurrency: chatServices.localUser!.currency,
-      //                         //         member: transactionService.member,
-      //                         //       ));
-      //                         // } else {
-      //                         //   unKnownCurrency(context);
-      //                         // }
-      //
-      //                         break;
-      //                       case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //                         break;
-      //                       case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
-      //                         // TODO: Handle this case.
-      //                         Get.back();
-      //                         chatServices.member = contactServices.mooweContacts.elementAt(index);
-      //                         chatServices.runChatServices();
-      //                         break;
-      //                       case UserActionType.PAY_INTO_CONTRACT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.PROCESS_CONTRACT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.BILL_PAY:
-      //                         // TODO: Handle this case.
-      //                         break;
-      //                       case UserActionType.REQUEST_PAYMENT:
-      //                         // TODO: Handle this case.
-      //                         transactionService.runTransaction();
-      //
-      //                         break;
-      //                       case UserActionType.TRANSFER_CASH_TO_BANK:
-      //                         // TODO: Handle this case.
-      //                         break;
-      //                       case UserActionType.ADD_MEMBER_TO_BUSINESS_ACCOUNT:
-      //                         // TODO: Handle this case.
-      //                         Navigator.of(context).pop();
-      //                         chatServices.runChatServices();
-      //                         break;
-      //                       case UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT:
-      //                         // TODO: Handle this case.
-      //                         break;
-      //                       case UserActionType.USER_ACTION_NOT_SET:
-      //                         // TODO: Handle this case.
-      //                         break;
-      //                     }
-      //                   });
-      //               // return
-      //             }),
-      //       )
-      //     ],
-      //   ),
-      // ),
-      floatingActionButton: enumServices.chatTypes != ChatTypes.PRIVATE_CHAT
-          ? FloatingActionButton(
-              backgroundColor: kPrimaryColor,
-              child: enumServices.userActionType == UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT ? const Text("Add") : const Text("Start"),
-              onPressed: () {
-                if (groupOrProjectMembers.isNotEmpty) {
-                  switch (enumServices.userActionType) {
-                    case UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT:
-                      Get.back();
-                      initialChat.chatType = enumServices.chatTypes;
-                      enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
-                      groupNamePushNavigator(context);
-                      break;
-                    case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
-                      Get.back();
-                      enumServices.chatServicesActions = ChatServicesActions.ADD_MEMBER_TO_PROJECT_OR_GROUP;
-                      chatServices.runChatServices();
-                      break;
-                    case UserActionType.CREATE_NEW_CHAT:
-                      break;
-                    case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.CREATE_CONTRACT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.SEND_CASH_IN_GROUP_CHAT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.SEND_CASH_PROJECT_CHAT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.SEND_CASH_TO_MOMO:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
-                      // TODO: Handle this case.
-                      break;
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(child: _body()),
+          ],
+        ),
+      ),
+      floatingActionButton: enumServices.userActionType == UserActionType.SEND_CASH_TO_MOMO
+          ? Container()
+          : enumServices.chatTypes != ChatTypes.PRIVATE_CHAT
+              ? FloatingActionButton(
+                  backgroundColor: kPrimaryColor,
+                  child: enumServices.userActionType == UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT ? const Text("Add") : const Text("Start"),
+                  onPressed: () {
+                    print("object");
+                    print(enumServices.userActionType);
+                    switch (enumServices.userActionType) {
+                      case UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT:
+                        Get.back();
+                        initialChat.chatType = enumServices.chatTypes;
+                        enumServices.appBarActions = ContactAppBarActions.CANCEL_SEARCH;
+                        enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
+                        groupNamePushNavigator(context);
+                        break;
+                      case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
+                        Get.back();
+                        enumServices.chatServicesActions = ChatServicesActions.ADD_MEMBER_TO_PROJECT_OR_GROUP;
+                        chatServices.runChatServices();
+                        break;
+                      case UserActionType.CREATE_NEW_CHAT:
+                        break;
+                      case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.CREATE_CONTRACT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.SEND_CASH_IN_GROUP_CHAT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.SEND_CASH_PROJECT_CHAT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.SEND_CASH_TO_MOMO:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
+                        // TODO: Handle this case.
+                        break;
 
-                    case UserActionType.PAY_INTO_CONTRACT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.PROCESS_CONTRACT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.BILL_PAY:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.REQUEST_PAYMENT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.TRANSFER_CASH_TO_BANK:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.ADD_MEMBER_TO_BUSINESS_ACCOUNT:
-                      // TODO: Handle this case.
-                      break;
-                    case UserActionType.USER_ACTION_NOT_SET:
-                      // TODO: Handle this case.
-                      break;
-                  }
-                }
-              },
-            )
-          : Container(),
+                      case UserActionType.PAY_INTO_CONTRACT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.PROCESS_CONTRACT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.BILL_PAY:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.REQUEST_PAYMENT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.TRANSFER_CASH_TO_BANK:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.ADD_MEMBER_TO_BUSINESS_ACCOUNT:
+                        // TODO: Handle this case.
+                        break;
+                      case UserActionType.USER_ACTION_NOT_SET:
+                        // TODO: Handle this case.
+                        break;
+                    }
+                  },
+                )
+              : Container(),
     );
   }
+
+  Widget _body() {
+    if (contactServices.permissionDenied) return const Center(child: Text('Permission denied'));
+    if (contactServices.localContact.isEmpty) return Center(child: LoadingListPage(count: 10));
+    return enumServices.userActionType == UserActionType.SEND_CASH_TO_MOMO
+        ? ListView.builder(
+            itemCount: contactServices.momoSelectedContacts.length,
+            itemBuilder: (context, i) {
+              return ListTile(
+                title: listTitle(contactServices.momoSelectedContacts.elementAt(i)),
+                subtitle: listSubtitle(contactServices.momoSelectedContacts.elementAt(i)),
+                trailing: contactServices.momoLogo(contactServices.momoSelectedContacts.elementAt(i)),
+                onTap: () {
+                  if (contactServices.getCurrencyType(contactServices.momoSelectedContacts.elementAt(i)) == "") {
+                    showToastMessage(msg: "Sorry: please check back later");
+                  } else {
+                    exchangeController.exchangeFrom.value = chatServices.localMember!.get(memberModel.currencyCode)!;
+                    exchangeController.exchangeTo.value = contactServices.getCurrencyType(contactServices.momoSelectedContacts.elementAt(i));
+                    transactionService.localCurrency = chatServices.localMember!.get(memberModel.currencyCode)!;
+                    transactionService.remoteCurrency = contactServices.getCurrencyType(contactServices.momoSelectedContacts.elementAt(i));
+                    exchangeController.currencyExchangeConverter().then((value) {
+                      print(value);
+                      Get.to(
+                        () => ConfirmContact(
+                          contact: contactServices.momoSelectedContacts.elementAt(i),
+                        ),
+                      );
+                    });
+                  }
+                },
+              );
+            },
+          )
+        : enumServices.appBarActions == ContactAppBarActions.SEARCH
+            ? ListView.builder(
+                itemCount: contactServices.localContactFound.length,
+                itemBuilder: (context, i) {
+                  return ListTile(
+                    title: listTitle(contactServices.localContactFound.elementAt(i)),
+                    subtitle: listSubtitle(contactServices.localContactFound.elementAt(i)),
+                    trailing: listTrailing(contactServices.localContactFound.elementAt(i)),
+                    onLongPress: onLongPress,
+                    onTap: () => logicForNewChat(contactServices.localContactFound.elementAt(i)),
+                  );
+                })
+            : ListView.builder(
+                itemCount: contactServices.localContact.length,
+                itemBuilder: (context, i) {
+                  return ListTile(
+                    title: listTitle(contactServices.localContact.elementAt(i)),
+                    subtitle: listSubtitle(contactServices.localContact.elementAt(i)),
+                    trailing: listTrailing(contactServices.localContact.elementAt(i)),
+                    onLongPress: onLongPress,
+                    onTap: () => logicForNewChat(contactServices.localContact.elementAt(i)),
+                  );
+                },
+              );
+  }
+
+  void onLongPress() {
+    if (enumServices.chatTypes == ChatTypes.PRIVATE_CHAT) {
+      enumServices.chatTypes = ChatTypes.GROUP_CHAT;
+      enumServices.userActionType = UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
+    } else {
+      enumServices.userActionType = UserActionType.CREATE_NEW_CHAT;
+      enumServices.chatTypes = ChatTypes.PRIVATE_CHAT;
+    }
+    setState(() {});
+  }
+
+  Widget listTitle(Contact contact) {
+    return Text(
+      contact.displayName,
+      style: themeData!.textTheme.titleMedium,
+    );
+  }
+
+  Widget listSubtitle(Contact contact) {
+    return android_ios_number_display(contact.phones.first);
+  }
+
+  Widget listTrailing(Contact contact) {
+    return SizedBox(
+      width: 50,
+      height: 50,
+      child: checkIfContactFound(contact)
+          ? Stack(
+              alignment: Alignment.center,
+              children: [
+                // ,
+                Positioned.fill(child: getLogo(contact)),
+                Visibility(
+                  visible: enumServices.userActionType == UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT ? true : false,
+                  child: Checkbox(
+                    value: checkIfContactIsSelected(contact),
+                    onChanged: (bool? val) {
+                      //TODO add checked contact to a list or remove it
+                      if (val == true) {
+                        for (var phone in contact.phones) {
+                          print(contact.phones.length);
+                          for (var snap in contactServices.snapshots) {
+                            if (contactServices.cleanNumber(phone) == snap.get("phone")) {
+                              // print(snap.data());
+                              var result = groupOrProjectMembers.where(
+                                (element) => element.get("phone") == snap.get("phone"),
+                              );
+                              if (result.isEmpty) {
+                                groupOrProjectMembers.add(snap);
+                                contactServices.selectedContacts.add(contact);
+                              }
+                            }
+                          }
+                        }
+                      } else {
+                        for (var phone in contact.phones) {
+                          contactServices.selectedContacts.removeWhere((element) {
+                            bool confirm = false;
+                            for (var element in element.phones) {
+                              if (contactServices.cleanNumber(phone) == contactServices.cleanNumber(element)) {
+                                groupOrProjectMembers.removeWhere((element) => contactServices.cleanNumber(phone) == element.get("phone"));
+                                confirm = true;
+                              }
+                            }
+                            return confirm;
+                          });
+                        }
+                        setState(() {});
+                      }
+                      setState(() {});
+                    },
+                  ),
+                ),
+              ],
+            )
+          : const Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned.fill(
+                    child: InkWell(
+                  child: Text("Invite"),
+                ))
+              ],
+            ),
+    );
+  }
+
+  bool checkIfContactFound(Contact contact) {
+    bool found_bool = false;
+    for (var element in contact.phones) {
+      for (var foundContact in contactServices.localContactFound) {
+        for (var found in foundContact.phones) {
+          if (contactServices.cleanNumber(found) == contactServices.cleanNumber(element)) {
+            found_bool = true;
+          }
+        }
+      }
+      // var existingItem = contactServices.contactservices.localContactFound.firstWhere((itemToCheck) => itemToCheck.phones == favoriteitem.link, orElse: () => null);
+    }
+    return found_bool;
+  }
+
+  bool checkIfContactIsSelected(Contact contact) {
+    bool found_bool = false;
+    for (var element in contact.phones) {
+      for (var foundContact in contactServices.selectedContacts) {
+        for (var found in foundContact.phones) {
+          if (contactServices.cleanNumber(found) == contactServices.cleanNumber(element)) {
+            found_bool = true;
+          }
+        }
+      }
+      // var existingItem = contactServices.contactservices.localContactFound.firstWhere((itemToCheck) => itemToCheck.phones == favoriteitem.link, orElse: () => null);
+    }
+    return found_bool;
+  }
+
+  Widget getLogo(Contact contact) {
+    // print(contact.phones);
+    bool found_bool = false;
+    for (var element in contact.phones) {
+      for (var foundContact in contactServices.localContactFound) {
+        for (var found in foundContact.phones) {
+          if (contactServices.cleanNumber(found) == contactServices.cleanNumber(element)) {
+            found_bool = true;
+          }
+        }
+      }
+      // var existingItem = _localContactFound.firstWhere((itemToCheck) => itemToCheck.phones == favoriteitem.link, orElse: () => null);
+    }
+
+    return found_bool
+        ? CircleAvatar(radius: imageRadius, backgroundImage: const AssetImage('assets/ic_launcher_round.png'))
+        : InkWell(
+            onTap: sharInvite,
+            child: const Text("Invite"),
+          );
+  }
+
+  DocumentSnapshot? selectedContact;
+
+  Chat newChat = Chat(
+    firstTimeMessage: true,
+    read: false,
+    time: Timestamp.now(),
+  );
+
+  // final contract = locator.get<Contract>();
 
   void sharInvite() {
     Share.share(
@@ -733,11 +469,224 @@ class _DisplayContactsState extends State<DisplayContacts> {
         );
     }
   }
+
+  void showInViteDialog(String name) {
+    Get.defaultDialog(
+        barrierDismissible: false,
+        title: "Invite to chat",
+        content: Text("Invite $name"),
+        confirm: SizedBox(
+          height: 40,
+          width: Get.width,
+          child: Row(
+            children: [
+              InkWell(
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                  child: Text("Cancel"),
+                ),
+                onTap: () => Get.back(),
+              ),
+              Expanded(child: Container()),
+              InkWell(
+                onTap: () {
+                  Get.back();
+                  sharInvite();
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                  child: Text("Invite"),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  void logicForNewChat(Contact contact) {
+    DocumentSnapshot<Object?>? member = documentSnapshot;
+    contactServices.context = context;
+    transactionService.context = context;
+    contactServices.newChat = initialChat;
+    contactServices.chatRoom = widget.chatRoom;
+    transactionService.chatRoom = widget.chatRoom;
+    print("Usr actions here ${enumServices.userActionType}");
+    print("Usr actions here ${enumServices.chatTypes}");
+
+    // contactServices.contract = contract;
+
+    switch (enumServices.userActionType) {
+      case UserActionType.CREATE_NEW_CHAT:
+        // TODO: Handle this case.
+        switch (enumServices.chatTypes!) {
+          case ChatTypes.PRIVATE_CHAT:
+            initialChat.chatType = enumServices.chatTypes;
+            groupOrProjectMembers.clear();
+            if (checkIfContactFound(contact)) {
+              for (var phone in contact.phones) {
+                for (var snap in contactServices.snapshots) {
+                  if (contactServices.cleanNumber(phone) == snap.get("phone")) {
+                    transactionService.member = snap;
+                    remoteMember = snap;
+                    member = snap;
+                    contactServices.selectedContact = snap;
+                  }
+                }
+              }
+
+              var chat = currentChats.firstWhereOrNull((element) {
+                return element.members!.contains(member?.get(memberModel.contactPath)) &&
+                    element.chatType == enumServices.chatTypes &&
+                    element.members!.contains(chatServices.localMember!.get(memberModel.contactPath));
+              });
+              var userChatRoomInfo = userChatRoom.firstWhereOrNull((element) {
+                return chat != null && chat.chatRoomChatsCollection == element.chatRoom;
+              });
+              groupOrProjectMembers.add(member!);
+              //
+              // if (chat == null) {
+              //   chatServices.runChatServices();
+              // } else {
+              //   Get.to(() => PrivateChatScreen(chatRoom: chat, userChatRoom: userChatRoomInfo));
+              // }
+
+              if (chat == null) {
+                Get.back();
+                chatServices.runChatServices();
+              } else {
+                Get.to(() => PrivateChatScreen(chatRoom: chat, userChatRoom: userChatRoomInfo));
+              }
+            } else {
+              showInViteDialog(contact.displayName);
+            }
+            break;
+          case ChatTypes.GROUP_CHAT:
+
+            // TODO: Handle this case.
+            initialChat.chatType = ChatTypes.GROUP_CHAT;
+            // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
+            enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
+            // chatServices.context = context;
+            print("this is a new group");
+            // Get.to(()=> SelectCurrency( actionType: actionsType));
+            groupNamePushNavigator(context);
+            break;
+          case ChatTypes.PROJECT_CHAT:
+            // TODO: Handle this case.
+            initialChat.chatType = ChatTypes.PROJECT_CHAT;
+            enumServices.chatServicesActions = ChatServicesActions.CREATE_NEW_GROUP_OR_PROJECT_CHAT;
+            // chatServices.context = context;
+            // CountryInfo? counteryInfo =  await showSearch<CountryInfo>(context: context, delegate: CurrencySearch());
+            // Get.to(()=>  SelectCurrency());
+            groupNamePushNavigator(context);
+            break;
+          case ChatTypes.FUND_RAISE:
+            // TODO: Handle this case.
+            break;
+          case ChatTypes.SUSU:
+            // TODO: Handle this case.
+            break;
+          case ChatTypes.BUSINESS_CHAT:
+            // TODO: Handle this case.
+            break;
+          case ChatTypes.STORE_CHAT:
+            // TODO: Handle this case.
+            break;
+        }
+        break;
+      case UserActionType.SEND_CASH_DIRECT_FROM_MOOWE_PAY:
+        // TODO: Handle this case.
+        Navigator.of(context).pop();
+        transactionService.runTransaction();
+        break;
+      case UserActionType.CREATE_CONTRACT:
+        // TODO: Handle this case.
+        break;
+      case UserActionType.SEND_CASH_IN_PRIVATE_CHAT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+        break;
+      case UserActionType.SEND_CASH_IN_GROUP_CHAT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.SEND_CASH_PROJECT_CHAT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.SEND_CASH_TO_MOMO:
+        // TODO: Handle this case.
+        // GetCurrencyByNumber getCurrencyByNumber = GetCurrencyByNumber(transactionService.member!.phone!);
+        // if (getCurrencyByNumber.getCurrency() != "unknown") {
+        //   Navigator.of(context).pop();
+        //   changeScreen(
+        //       context,
+        //       MomoHomeScreen(
+        //         contactCurrency: getCurrencyByNumber.getCurrency(),
+        //         userCurrency: chatServices.localUser!.currency,
+        //         member: transactionService.member,
+        //       ));
+        // } else {
+        //   unKnownCurrency(context);
+        // }
+
+        break;
+      case UserActionType.SEND_CASH_TO_BANK_ACCOUNT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.CASH_OUT_TO_BANK_ACCOUNT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+        break;
+      case UserActionType.ADD_NEW_MEMBER_TO_GROUP_OR_PROJECT:
+        // TODO: Handle this case.
+        Get.back();
+        chatServices.member = documentSnapshot;
+        chatServices.runChatServices();
+        break;
+      case UserActionType.PAY_INTO_CONTRACT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.PROCESS_CONTRACT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.BILL_PAY:
+        // TODO: Handle this case.
+        break;
+      case UserActionType.REQUEST_PAYMENT:
+        // TODO: Handle this case.
+        transactionService.runTransaction();
+
+        break;
+      case UserActionType.TRANSFER_CASH_TO_BANK:
+        // TODO: Handle this case.
+        break;
+      case UserActionType.ADD_MEMBER_TO_BUSINESS_ACCOUNT:
+        // TODO: Handle this case.
+        Navigator.of(context).pop();
+        chatServices.runChatServices();
+        break;
+      case UserActionType.CREATE_NEW_GROUP_OR_PROJECT_CHAT:
+        // TODO: Handle this case.
+        break;
+      case UserActionType.USER_ACTION_NOT_SET:
+        // TODO: Handle this case.
+        break;
+    }
+  }
 }
 
 class ShareWithContact extends StatelessWidget {
-  Contact contact;
-  ShareWithContact({Key? key, required this.contact}) : super(key: key);
+  final Contact contact;
+  const ShareWithContact({Key? key, required this.contact}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

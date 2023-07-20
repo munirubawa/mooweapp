@@ -129,18 +129,18 @@ class _GroupContributionsScreenState extends State<GroupContributionsScreen> wit
                                       groupChatController.memberDisplayType = GroupMemberDisplayType.TRANSFER_PAYMENT_FROM_GROUP_CARD;
 
                                       Get.to(() => Scaffold(
-                                            appBar: AppBar(
+                                            appBar: Platform.isIOS? AppBar(
                                               elevation: 0.0,
                                               backgroundColor: kPrimaryColor,
                                               title: const Text("Select a Contact"),
-                                            ),
+                                            ) : null,
                                             body: GroupMembersScreen(
                                               chatRoom: widget.chatRoom,
                                             ),
                                           ));
                                     },
-                                    child: Column(
-                                      children: const [
+                                    child: const Column(
+                                      children: [
                                         Icon(Icons.send),
                                         Text("Transfer"),
                                       ],
@@ -153,8 +153,8 @@ class _GroupContributionsScreenState extends State<GroupContributionsScreen> wit
                                       transactionService.chatRoom = widget.chatRoom;
                                       Get.to(() => DisplayBusinessContacts(), binding: BusinessBinding());
                                     },
-                                    child: Column(
-                                      children: const [
+                                    child: const Column(
+                                      children: [
                                         Icon(Icons.payment),
                                         Text("Pay Bill"),
                                       ],
@@ -167,8 +167,8 @@ class _GroupContributionsScreenState extends State<GroupContributionsScreen> wit
                                       enumServices.cameraScanLocation = CameraScanLocation.CAMERA_FROM_GROUP_CHAT;
                                       Get.to(() => const QRViewExample());
                                     },
-                                    child: Column(
-                                      children: const [
+                                    child: const Column(
+                                      children: [
                                         Icon(Icons.qr_code_scanner),
                                         Text("Scan"),
                                       ],

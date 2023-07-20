@@ -1,0 +1,15 @@
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift":
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Storage.swiftdeps"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Storage.o"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Storage.d"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/Storage.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift":
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/StorageFactory.d"
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/StorageFactory.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/StorageFactory.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/StorageFactory.dia"
+"/Users/munirubawa/development/mooweapp/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift":
+  object: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/WeakContainer.o"
+  swift-dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/WeakContainer.swiftdeps"
+  diagnostics: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/WeakContainer.dia"
+  dependencies: "/Users/munirubawa/development/mooweapp/ios/Flutter/Debug/iphoneos/Pods.build/Debug-iphoneos/FirebaseCoreInternal.build/Objects-normal/arm64/WeakContainer.d"

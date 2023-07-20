@@ -124,7 +124,7 @@ class DisplayBusinessContacts extends StatelessWidget {
                               // transactionService.chatRoom = widget.chatRoom;
                               // Get.to(()=>  ChatMoneyKeyPad(chatRoom: chatRoom, contract: Contract(),));
                             businessServices.business.value = business;
-                              showBarModalBottomSheet(
+                              showModalBottomSheet(
                                 context: context,
                                 builder: (context) => Container(
                                   color: Colors.white,
@@ -140,7 +140,7 @@ class DisplayBusinessContacts extends StatelessWidget {
                               enumServices.fundingActionType = FundingActionType.TRANSFER_FUNDS_FROM_WALLET_TO_A_BUSINESS;
                               enumServices.userActionType = UserActionType.BILL_PAY;
                               businessServices.business.value = business;
-                              showBarModalBottomSheet(
+                              showModalBottomSheet(
                                 context: context,
                                 builder: (context) => Container(
                                   color: Colors.white,

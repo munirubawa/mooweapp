@@ -46,7 +46,7 @@ class BusinessGroupMembersScreen extends StatelessWidget {
                                 transactionService.context = context;
                                 debugPrint("semd money in chat");
 
-                                showBarModalBottomSheet(
+                                showModalBottomSheet(
                                   context: context,
                                   builder: (context) => Container(
                                     color: Colors.white,
@@ -69,7 +69,7 @@ class BusinessGroupMembersScreen extends StatelessWidget {
                               }
                               userProfileController.chatRoom = chatRoom;
                               userProfileController.member = element;
-                              showBarModalBottomSheet(
+                              showModalBottomSheet(
                                 context: context,
                                 builder: (context) => Container(
                                   color: Colors.white,

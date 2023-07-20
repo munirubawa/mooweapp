@@ -333,6 +333,7 @@ class ChatServices extends GetxController {
             //   showToastMessage(msg: "Member already exist!", backgroundColor: Colors.green);
             // }
           }
+          showToastMessage(msg: "Member successfully added!", backgroundColor: Colors.green);
           if (chatRoom!.chatType == ChatTypes.GROUP_CHAT) {
             if (chatRoom!.members!.length == 6) {
               chatRoom!.reference!.set({"chatRoomDecorumLimit": 2}, SetOptions(merge: true));

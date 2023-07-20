@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/self_check.c \
+  /Users/munirubawa/development/mooweapp/ios/Pods/Target\ Support\ Files/BoringSSL-GRPC/BoringSSL-GRPC-prefix.pch \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/crypto.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/base.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/is_boringssl.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/opensslconf.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/boringssl_prefix_symbols.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/sha.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/mem.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/thread.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/aead.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/aes.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/bn.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/des.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/dh.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/digest.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/ec.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/ec_key.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/engine.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/ex_data.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/stack.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/type_check.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/ecdsa.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/nid.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/rsa.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../../internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../ec/internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../ec/../bn/internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../ec/../bn/../../internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../ecdsa/internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../rand/internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/include/openssl/cpu.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../rand/../../internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../rand/../modes/internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../rand/../modes/../../internal.h \
+  /Users/munirubawa/development/mooweapp/ios/Pods/BoringSSL-GRPC/src/crypto/fipsmodule/self_check/../tls/internal.h

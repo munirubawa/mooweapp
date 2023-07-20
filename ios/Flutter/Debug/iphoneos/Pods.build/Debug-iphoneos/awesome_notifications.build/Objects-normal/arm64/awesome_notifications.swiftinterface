@@ -1,0 +1,57 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name awesome_notifications
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Flutter
+import Foundation
+import IosAwnCore
+import Swift
+import UIKit
+import UserNotifications
+import _Concurrency
+import _StringProcessing
+@_hasMissingDesignatedInitializers public class DartAwesomeNotificationsExtension : IosAwnCore.AwesomeNotificationsExtension {
+  public static var registrar: (any Flutter.FlutterPluginRegistrar)?
+  public static func setRegistrar(flutterEngine: Flutter.FlutterEngine? = nil)
+  public static func initialize()
+  public func loadExternalExtensions()
+  @objc deinit
+}
+public class DartBackgroundExecutor : IosAwnCore.BackgroundExecutor {
+  final public let silentDataQueue: IosAwnCore.SynchronizedArray<IosAwnCore.SilentActionRequest>
+  public var isRunning: Swift.Bool {
+    get
+  }
+  public var isNotRunning: Swift.Bool {
+    get
+  }
+  required public init()
+  public static func extendCapabilities(usingFlutterRegistrar registrar: any Flutter.FlutterPluginRegistrar)
+  public func runBackgroundProcess(silentActionRequest: IosAwnCore.SilentActionRequest, dartCallbackHandle: Swift.Int64, silentCallbackHandle: Swift.Int64)
+  public func addSilentActionRequest(_ silentActionRequest: IosAwnCore.SilentActionRequest)
+  public func onMethodCall(_ call: Flutter.FlutterMethodCall, result: @escaping Flutter.FlutterResult)
+  @objc deinit
+}
+@available(iOS 10.0, *)
+public class FlutterAudioUtils : IosAwnCore.AudioUtils {
+  public init(registrar: any Flutter.FlutterPluginRegistrar)
+  public static func extendCapabilities(usingFlutterRegistrar registrar: any Flutter.FlutterPluginRegistrar)
+  override open func getSoundFromAsset(_ mediaPath: Swift.String) -> UserNotifications.UNNotificationSound?
+  @objc deinit
+}
+@available(iOS 10.0, *)
+public class FlutterBitmapUtils : IosAwnCore.BitmapUtils {
+  public init(registrar: any Flutter.FlutterPluginRegistrar)
+  public static func extendCapabilities(usingFlutterRegistrar registrar: any Flutter.FlutterPluginRegistrar)
+  override open func getBitmapFromAsset(_ mediaPath: Swift.String) -> UIKit.UIImage?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SwiftAwesomeNotificationsPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin, IosAwnCore.AwesomeEventListener, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc override dynamic public init()
+  @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
+  @objc public static func setPluginRegistrantCallback(_ callback: Flutter.FlutterPluginRegistrantCallback)
+  @objc public func detachFromEngine(for registrar: any Flutter.FlutterPluginRegistrar)
+  public func onNewAwesomeEvent(eventType: Swift.String, content: [Swift.String : Any?])
+  @objc public func handle(_ call: Flutter.FlutterMethodCall, result: @escaping Flutter.FlutterResult)
+  @objc deinit
+}

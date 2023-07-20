@@ -1,0 +1,2455 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "IosAwnCore",
+        "printedName": "IosAwnCore",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DartAwesomeNotificationsExtension",
+        "printedName": "DartAwesomeNotificationsExtension",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "registrar",
+            "printedName": "registrar",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Flutter.FlutterPluginRegistrar?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterPluginRegistrar",
+                    "printedName": "Flutter.FlutterPluginRegistrar",
+                    "usr": "c:objc(pl)FlutterPluginRegistrar"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvpZ",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvpZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterPluginRegistrar?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterPluginRegistrar",
+                        "printedName": "Flutter.FlutterPluginRegistrar",
+                        "usr": "c:objc(pl)FlutterPluginRegistrar"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvgZ",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvgZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterPluginRegistrar?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterPluginRegistrar",
+                        "printedName": "Flutter.FlutterPluginRegistrar",
+                        "usr": "c:objc(pl)FlutterPluginRegistrar"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvsZ",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvsZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvMZ",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC9registrarSo22FlutterPluginRegistrar_pSgvMZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setRegistrar",
+            "printedName": "setRegistrar(flutterEngine:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Flutter.FlutterEngine?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterEngine",
+                    "printedName": "Flutter.FlutterEngine",
+                    "usr": "c:objc(cs)FlutterEngine"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC12setRegistrar13flutterEngineySo07FlutterJ0CSg_tFZ",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC12setRegistrar13flutterEngineySo07FlutterJ0CSg_tFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC10initializeyyFZ",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC10initializeyyFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "initialized",
+            "printedName": "initialized",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvp",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvg",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvs",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvs",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvM",
+                "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC11initializedSbvM",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "loadExternalExtensions",
+            "printedName": "loadExternalExtensions()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC22loadExternalExtensionsyyF",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC22loadExternalExtensionsyyF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DartAwesomeNotificationsExtension",
+                "printedName": "awesome_notifications.DartAwesomeNotificationsExtension",
+                "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionCACycfc",
+            "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionCACycfc",
+            "moduleName": "awesome_notifications",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21awesome_notifications33DartAwesomeNotificationsExtensionC",
+        "mangledName": "$s21awesome_notifications33DartAwesomeNotificationsExtensionC",
+        "moduleName": "awesome_notifications",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AwesomeNotificationsExtension",
+            "printedName": "AwesomeNotificationsExtension",
+            "usr": "s:10IosAwnCore29AwesomeNotificationsExtensionP",
+            "mangledName": "$s10IosAwnCore29AwesomeNotificationsExtensionP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "IosAwnCore",
+        "printedName": "IosAwnCore",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DartBackgroundExecutor",
+        "printedName": "DartBackgroundExecutor",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "silentDataQueue",
+            "printedName": "silentDataQueue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SynchronizedArray",
+                "printedName": "IosAwnCore.SynchronizedArray<IosAwnCore.SilentActionRequest>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SilentActionRequest",
+                    "printedName": "IosAwnCore.SilentActionRequest",
+                    "usr": "s:10IosAwnCore19SilentActionRequestC"
+                  }
+                ],
+                "usr": "s:10IosAwnCore17SynchronizedArrayC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC15silentDataQueue10IosAwnCore17SynchronizedArrayCyAE19SilentActionRequestCGvp",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC15silentDataQueue10IosAwnCore17SynchronizedArrayCyAE19SilentActionRequestCGvp",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SynchronizedArray",
+                    "printedName": "IosAwnCore.SynchronizedArray<IosAwnCore.SilentActionRequest>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SilentActionRequest",
+                        "printedName": "IosAwnCore.SilentActionRequest",
+                        "usr": "s:10IosAwnCore19SilentActionRequestC"
+                      }
+                    ],
+                    "usr": "s:10IosAwnCore17SynchronizedArrayC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC15silentDataQueue10IosAwnCore17SynchronizedArrayCyAE19SilentActionRequestCGvg",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC15silentDataQueue10IosAwnCore17SynchronizedArrayCyAE19SilentActionRequestCGvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "registrar",
+            "printedName": "registrar",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Flutter.FlutterPluginRegistrar?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterPluginRegistrar",
+                    "printedName": "Flutter.FlutterPluginRegistrar",
+                    "usr": "c:objc(pl)FlutterPluginRegistrar"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvpZ",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvpZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterPluginRegistrar?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterPluginRegistrar",
+                        "printedName": "Flutter.FlutterPluginRegistrar",
+                        "usr": "c:objc(pl)FlutterPluginRegistrar"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvgZ",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvgZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent",
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterPluginRegistrar?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterPluginRegistrar",
+                        "printedName": "Flutter.FlutterPluginRegistrar",
+                        "usr": "c:objc(pl)FlutterPluginRegistrar"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvsZ",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvsZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent",
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvMZ",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9registrarSo22FlutterPluginRegistrar_pSgvMZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent",
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isRunning",
+            "printedName": "isRunning",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC9isRunningSbvp",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9isRunningSbvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC9isRunningSbvg",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC9isRunningSbvg",
+                "moduleName": "awesome_notifications",
+                "isOpen": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isNotRunning",
+            "printedName": "isNotRunning",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC12isNotRunningSbvp",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC12isNotRunningSbvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC12isNotRunningSbvg",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC12isNotRunningSbvg",
+                "moduleName": "awesome_notifications",
+                "isOpen": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DartBackgroundExecutor",
+                "printedName": "awesome_notifications.DartBackgroundExecutor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorCACycfc",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorCACycfc",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "Required",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "extendCapabilities",
+            "printedName": "extendCapabilities(usingFlutterRegistrar:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC18extendCapabilities21usingFlutterRegistrarySo0i6PluginJ0_p_tFZ",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC18extendCapabilities21usingFlutterRegistrarySo0i6PluginJ0_p_tFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "dartCallbackHandle",
+            "printedName": "dartCallbackHandle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvp",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvg",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvs",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64Vvs",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64VvM",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC18dartCallbackHandles5Int64VvM",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "silentCallbackHandle",
+            "printedName": "silentCallbackHandle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvp",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvg",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvs",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64Vvs",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64VvM",
+                "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC20silentCallbackHandles5Int64VvM",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "runBackgroundProcess",
+            "printedName": "runBackgroundProcess(silentActionRequest:dartCallbackHandle:silentCallbackHandle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SilentActionRequest",
+                "printedName": "IosAwnCore.SilentActionRequest",
+                "usr": "s:10IosAwnCore19SilentActionRequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC03runD7Process19silentActionRequest18dartCallbackHandle0hlM0y10IosAwnCore06SilentiJ0C_s5Int64VALtF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC03runD7Process19silentActionRequest18dartCallbackHandle0hlM0y10IosAwnCore06SilentiJ0C_s5Int64VALtF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addSilentActionRequest",
+            "printedName": "addSilentActionRequest(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SilentActionRequest",
+                "printedName": "IosAwnCore.SilentActionRequest",
+                "usr": "s:10IosAwnCore19SilentActionRequestC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC22addSilentActionRequestyy10IosAwnCore0ghI0CF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC22addSilentActionRequestyy10IosAwnCore0ghI0CF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onMethodCall",
+            "printedName": "onMethodCall(_:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterMethodCall",
+                "printedName": "Flutter.FlutterMethodCall",
+                "usr": "c:objc(cs)FlutterMethodCall"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC12onMethodCall_6resultySo07FluttergH0C_yypSgctF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC12onMethodCall_6resultySo07FluttergH0C_yypSgctF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "runBackgroundThread",
+            "printedName": "runBackgroundThread(silentCallbackHandle:dartCallbackHandle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC03runD6Thread20silentCallbackHandle04dartiJ0ys5Int64V_AHtF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC03runD6Thread20silentCallbackHandle04dartiJ0ys5Int64V_AHtF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createNewFlutterEngine",
+            "printedName": "createNewFlutterEngine(dartCallbackInfo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterCallbackInformation",
+                "printedName": "Flutter.FlutterCallbackInformation",
+                "usr": "c:objc(cs)FlutterCallbackInformation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC22createNewFlutterEngine16dartCallbackInfoySo0hK11InformationC_tF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC22createNewFlutterEngine16dartCallbackInfoySo0hK11InformationC_tF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initializeReverseMethodChannel",
+            "printedName": "initializeReverseMethodChannel(backgroundEngine:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterEngine",
+                "printedName": "Flutter.FlutterEngine",
+                "usr": "c:objc(cs)FlutterEngine"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC30initializeReverseMethodChannel16backgroundEngineySo07FlutterK0C_tF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC30initializeReverseMethodChannel16backgroundEngineySo07FlutterK0C_tF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "closeBackgroundIsolate",
+            "printedName": "closeBackgroundIsolate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC05closeD7IsolateyyF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC05closeD7IsolateyyF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dischargeNextSilentExecution",
+            "printedName": "dischargeNextSilentExecution()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC28dischargeNextSilentExecutionyyF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC28dischargeNextSilentExecutionyyF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "finishDartBackgroundExecution",
+            "printedName": "finishDartBackgroundExecution()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC06finishcD9ExecutionyyF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC06finishcD9ExecutionyyF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "executeDartCallbackInBackgroundIsolate",
+            "printedName": "executeDartCallbackInBackgroundIsolate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SilentActionRequest",
+                "printedName": "IosAwnCore.SilentActionRequest",
+                "usr": "s:10IosAwnCore19SilentActionRequestC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications22DartBackgroundExecutorC07executec10CallbackInD7Isolateyy10IosAwnCore19SilentActionRequestCF",
+            "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC07executec10CallbackInD7Isolateyy10IosAwnCore19SilentActionRequestCF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21awesome_notifications22DartBackgroundExecutorC",
+        "mangledName": "$s21awesome_notifications22DartBackgroundExecutorC",
+        "moduleName": "awesome_notifications",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "BackgroundExecutor",
+            "printedName": "BackgroundExecutor",
+            "usr": "s:10IosAwnCore18BackgroundExecutorP",
+            "mangledName": "$s10IosAwnCore18BackgroundExecutorP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "IosAwnCore",
+        "printedName": "IosAwnCore",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlutterAudioUtils",
+        "printedName": "FlutterAudioUtils",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "registrar",
+            "printedName": "registrar",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications17FlutterAudioUtilsC9registrarSo0C15PluginRegistrar_pvp",
+            "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC9registrarSo0C15PluginRegistrar_pvp",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "Final",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterPluginRegistrar",
+                    "printedName": "Flutter.FlutterPluginRegistrar",
+                    "usr": "c:objc(pl)FlutterPluginRegistrar"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications17FlutterAudioUtilsC9registrarSo0C15PluginRegistrar_pvg",
+                "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC9registrarSo0C15PluginRegistrar_pvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(registrar:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterAudioUtils",
+                "printedName": "awesome_notifications.FlutterAudioUtils",
+                "usr": "s:21awesome_notifications17FlutterAudioUtilsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications17FlutterAudioUtilsC9registrarACSo0C15PluginRegistrar_p_tcfc",
+            "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC9registrarACSo0C15PluginRegistrar_p_tcfc",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "extendCapabilities",
+            "printedName": "extendCapabilities(usingFlutterRegistrar:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications17FlutterAudioUtilsC18extendCapabilities05usingC9RegistrarySo0c6PluginI0_p_tFZ",
+            "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC18extendCapabilities05usingC9RegistrarySo0c6PluginI0_p_tFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSoundFromAsset",
+            "printedName": "getSoundFromAsset(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UserNotifications.UNNotificationSound?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationSound",
+                    "printedName": "UserNotifications.UNNotificationSound",
+                    "usr": "c:objc(cs)UNNotificationSound"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications17FlutterAudioUtilsC17getSoundFromAssetySo014UNNotificationG0CSgSSF",
+            "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC17getSoundFromAssetySo014UNNotificationG0CSgSSF",
+            "moduleName": "awesome_notifications",
+            "overriding": true,
+            "isOpen": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterAudioUtils",
+                "printedName": "awesome_notifications.FlutterAudioUtils",
+                "usr": "s:21awesome_notifications17FlutterAudioUtilsC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications17FlutterAudioUtilsCACycfc",
+            "mangledName": "$s21awesome_notifications17FlutterAudioUtilsCACycfc",
+            "moduleName": "awesome_notifications",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21awesome_notifications17FlutterAudioUtilsC",
+        "mangledName": "$s21awesome_notifications17FlutterAudioUtilsC",
+        "moduleName": "awesome_notifications",
+        "isOpen": true,
+        "intro_iOS": "10.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "superclassUsr": "s:10IosAwnCore10AudioUtilsC",
+        "superclassNames": [
+          "IosAwnCore.AudioUtils",
+          "IosAwnCore.MediaUtils"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "IosAwnCore",
+        "printedName": "IosAwnCore",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlutterBitmapUtils",
+        "printedName": "FlutterBitmapUtils",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "registrar",
+            "printedName": "registrar",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications18FlutterBitmapUtilsC9registrarSo0C15PluginRegistrar_pvp",
+            "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC9registrarSo0C15PluginRegistrar_pvp",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "Final",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterPluginRegistrar",
+                    "printedName": "Flutter.FlutterPluginRegistrar",
+                    "usr": "c:objc(pl)FlutterPluginRegistrar"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications18FlutterBitmapUtilsC9registrarSo0C15PluginRegistrar_pvg",
+                "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC9registrarSo0C15PluginRegistrar_pvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(registrar:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterBitmapUtils",
+                "printedName": "awesome_notifications.FlutterBitmapUtils",
+                "usr": "s:21awesome_notifications18FlutterBitmapUtilsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications18FlutterBitmapUtilsC9registrarACSo0C15PluginRegistrar_p_tcfc",
+            "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC9registrarACSo0C15PluginRegistrar_p_tcfc",
+            "moduleName": "awesome_notifications",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "extendCapabilities",
+            "printedName": "extendCapabilities(usingFlutterRegistrar:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications18FlutterBitmapUtilsC18extendCapabilities05usingC9RegistrarySo0c6PluginI0_p_tFZ",
+            "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC18extendCapabilities05usingC9RegistrarySo0c6PluginI0_p_tFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getBitmapFromAsset",
+            "printedName": "getBitmapFromAsset(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications18FlutterBitmapUtilsC03getD9FromAssetySo7UIImageCSgSSF",
+            "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC03getD9FromAssetySo7UIImageCSgSSF",
+            "moduleName": "awesome_notifications",
+            "overriding": true,
+            "isOpen": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterBitmapUtils",
+                "printedName": "awesome_notifications.FlutterBitmapUtils",
+                "usr": "s:21awesome_notifications18FlutterBitmapUtilsC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21awesome_notifications18FlutterBitmapUtilsCACycfc",
+            "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsCACycfc",
+            "moduleName": "awesome_notifications",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21awesome_notifications18FlutterBitmapUtilsC",
+        "mangledName": "$s21awesome_notifications18FlutterBitmapUtilsC",
+        "moduleName": "awesome_notifications",
+        "isOpen": true,
+        "intro_iOS": "10.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "superclassUsr": "s:10IosAwnCore11BitmapUtilsC",
+        "superclassNames": [
+          "IosAwnCore.BitmapUtils",
+          "IosAwnCore.MediaUtils"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "Flutter",
+        "printedName": "Flutter",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "Import",
+        "name": "IosAwnCore",
+        "printedName": "IosAwnCore",
+        "declKind": "Import",
+        "moduleName": "awesome_notifications"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SwiftAwesomeNotificationsPlugin",
+        "printedName": "SwiftAwesomeNotificationsPlugin",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "TAG",
+            "printedName": "TAG",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC3TAGSSvpZ",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC3TAGSSvpZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC3TAGSSvgZ",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC3TAGSSvgZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "flutterRegistrantCallback",
+            "printedName": "flutterRegistrantCallback",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Flutter.FlutterPluginRegistry) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Flutter.FlutterPluginRegistry) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterPluginRegistry",
+                        "printedName": "Flutter.FlutterPluginRegistry",
+                        "usr": "c:objc(pl)FlutterPluginRegistry"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvpZ",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvpZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Flutter.FlutterPluginRegistry) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Flutter.FlutterPluginRegistry) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlutterPluginRegistry",
+                            "printedName": "Flutter.FlutterPluginRegistry",
+                            "usr": "c:objc(pl)FlutterPluginRegistry"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvgZ",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvgZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Flutter.FlutterPluginRegistry) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Flutter.FlutterPluginRegistry) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlutterPluginRegistry",
+                            "printedName": "Flutter.FlutterPluginRegistry",
+                            "usr": "c:objc(pl)FlutterPluginRegistry"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvsZ",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvsZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvMZ",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC25flutterRegistrantCallbackySo07FlutterF8Registry_pXCSgvMZ",
+                "moduleName": "awesome_notifications",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "awesomeNotifications",
+            "printedName": "awesomeNotifications",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IosAwnCore.AwesomeNotifications?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AwesomeNotifications",
+                    "printedName": "IosAwnCore.AwesomeNotifications",
+                    "usr": "c:@M@IosAwnCore@objc(cs)AwesomeNotifications"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvp",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IosAwnCore.AwesomeNotifications?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AwesomeNotifications",
+                        "printedName": "IosAwnCore.AwesomeNotifications",
+                        "usr": "c:@M@IosAwnCore@objc(cs)AwesomeNotifications"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvg",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IosAwnCore.AwesomeNotifications?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AwesomeNotifications",
+                        "printedName": "IosAwnCore.AwesomeNotifications",
+                        "usr": "c:@M@IosAwnCore@objc(cs)AwesomeNotifications"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvs",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvs",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvM",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC0aE010IosAwnCore0dE0CSgvM",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "flutterChannel",
+            "printedName": "flutterChannel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Flutter.FlutterMethodChannel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterMethodChannel",
+                    "printedName": "Flutter.FlutterMethodChannel",
+                    "usr": "c:objc(cs)FlutterMethodChannel"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvp",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvp",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterMethodChannel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterMethodChannel",
+                        "printedName": "Flutter.FlutterMethodChannel",
+                        "usr": "c:objc(cs)FlutterMethodChannel"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvg",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvg",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterMethodChannel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterMethodChannel",
+                        "printedName": "Flutter.FlutterMethodChannel",
+                        "usr": "c:objc(cs)FlutterMethodChannel"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvs",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvs",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvM",
+                "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC14flutterChannelSo013FlutterMethodH0CSgvM",
+                "moduleName": "awesome_notifications",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SwiftAwesomeNotificationsPlugin",
+                "printedName": "awesome_notifications.SwiftAwesomeNotificationsPlugin",
+                "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin(im)init",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginCACycfc",
+            "moduleName": "awesome_notifications",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin(cm)registerWithRegistrar:",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC8register4withySo07FlutterF9Registrar_p_tFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "objc_name": "registerWithRegistrar:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPluginRegistrantCallback",
+            "printedName": "setPluginRegistrantCallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Flutter.FlutterPluginRegistry) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterPluginRegistry",
+                    "printedName": "Flutter.FlutterPluginRegistry",
+                    "usr": "c:objc(pl)FlutterPluginRegistry"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin(cm)setPluginRegistrantCallback:",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC03setF18RegistrantCallbackyyySo07FlutterF8Registry_pXCFZ",
+            "moduleName": "awesome_notifications",
+            "static": true,
+            "objc_name": "setPluginRegistrantCallback:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "detachFromEngine",
+            "printedName": "detachFromEngine(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterPluginRegistrar",
+                "printedName": "Flutter.FlutterPluginRegistrar",
+                "usr": "c:objc(pl)FlutterPluginRegistrar"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin(im)detachFromEngineForRegistrar:",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC16detachFromEngine3forySo07FlutterF9Registrar_p_tF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "objc_name": "detachFromEngineForRegistrar:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onNewAwesomeEvent",
+            "printedName": "onNewAwesomeEvent(eventType:content:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any?]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21awesome_notifications31SwiftAwesomeNotificationsPluginC05onNewD5Event9eventType7contentySS_SDySSypSgGtF",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC05onNewD5Event9eventType7contentySS_SDySSypSgGtF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(_:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlutterMethodCall",
+                "printedName": "Flutter.FlutterMethodCall",
+                "usr": "c:objc(cs)FlutterMethodCall"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin(im)handleMethodCall:result:",
+            "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF",
+            "moduleName": "awesome_notifications",
+            "isOpen": true,
+            "objc_name": "handleMethodCall:result:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@awesome_notifications@objc(cs)SwiftAwesomeNotificationsPlugin",
+        "mangledName": "$s21awesome_notifications31SwiftAwesomeNotificationsPluginC",
+        "moduleName": "awesome_notifications",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AwesomeEventListener",
+            "printedName": "AwesomeEventListener",
+            "usr": "s:10IosAwnCore20AwesomeEventListenerP",
+            "mangledName": "$s10IosAwnCore20AwesomeEventListenerP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/DartAwesomeNotificationsExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1102,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/DartBackgroundExecutor.swift",
+      "kind": "StringLiteral",
+      "offset": 291,
+      "length": 24,
+      "value": "\"DartBackgroundExecutor\""
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/DartBackgroundExecutor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 626,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/DartBackgroundExecutor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1301,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/DartBackgroundExecutor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1341,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/FlutterAudioUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 202,
+      "length": 17,
+      "value": "\"awesome_notifications.FlutterAudioUtils\""
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/FlutterBitmapUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 203,
+      "length": 18,
+      "value": "\"awesome_notifications.FlutterBitmapUtils\""
+    },
+    {
+      "filePath": "\/Users\/munirubawa\/flutter\/.pub-cache\/hosted\/pub.dartlang.org\/awesome_notifications-0.7.4+1\/ios\/Classes\/lib\/SwiftAwesomeNotificationsPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 321,
+      "length": 28,
+      "value": "\"AwesomeNotificationsPlugin\""
+    }
+  ]
+}

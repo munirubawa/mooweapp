@@ -5,14 +5,13 @@ class AllBindings extends GetxController {
   static AllBindings instance = Get.find();
   @override
   void onInit() {
-    Get.put(NotificationController());
+    // Get.put(NotificationController());
     Get.put(PermissionController());
     Get.put(CollectionController());
     Get.put(NavController());
     Get.put(SandboxPaymentMethodController());
     Get.put(ProductsController());
     Get.put(CallSignalingController());
-    Get.put(ContactServices());
     Get.put(DatabaseHelper());
     Get.put(CartController());
     // Get.put(UserController());
@@ -31,6 +30,7 @@ class AllBindings extends GetxController {
       print("initializeControllersAfterLogin");
     }
     Get.put(PaymentsController());
+    Get.put(ContactServices());
 
     Get.put(ApiController());
     Get.put(ChatRoomController());
@@ -38,7 +38,7 @@ class AllBindings extends GetxController {
     Get.put(TransactionServices());
     Get.put(UserProfileController());
     Get.put(GrouchChatController());
-    Get.put(AddressController());
+    // Get.put(AddressController());
     Get.put(BusinessAcceptPaymentsController());
     Get.put(BusinessServices());
     Get.put(AddProductController());
